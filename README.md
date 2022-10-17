@@ -1,19 +1,21 @@
-# ESLint (and Prettier) config
+# ESLint config
 
 These are settings for ESLint and Prettier used by Codemask.
 
 ## What it does
 
-This package setup lints for your project. Check the .eslintrc.js file to see what is included. You can always change this rules locally
+This package setup lints for your project. Check the .eslintrc.js file to see what is included. If you are using prettier you can copy config file as well.
 
 ## Installing
 
 1. In your project folder, run:
 
 ```
-npm i -D eslint-config-codemask
-# or yarn install --dev eslint-config-codemask
+yarn add --dev eslint-config-codemask
+# please also install peerDependecy:
+yarn add yarn install --dev @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser eslint eslint-plugin-functional eslint-plugin-import eslint-plugin-jsdoc eslint-plugin-jsx-a11y eslint-plugin-nested-if eslint-plugin-no-else eslint-plugin-no-loops eslint-plugin-prefer-arrow eslint-plugin-react eslint-plugin-react-hooks
 ```
+
 
 2. Create (or update) a `.eslintrc` file with the following content:
 
