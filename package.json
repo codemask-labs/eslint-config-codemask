@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-codemask",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,7 @@
   },
   "author": "Grzegorz Wadas",
   "license": "MIT",
-  "peerDependencies" : {
-    "eslint": "8.*"
-  },
-  "devDependencies": {
+  "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "5.40.0",
     "@typescript-eslint/eslint-plugin-tslint": "5.40.0",
     "@typescript-eslint/parser": "5.40.0",
@@ -25,7 +22,6 @@
     "eslint-plugin-no-loops": "0.3.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-react": "7.31.10",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "prettier": "2.7.1"
+    "eslint-plugin-react-hooks": "4.6.0"
   }
 }
