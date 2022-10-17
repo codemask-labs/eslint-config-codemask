@@ -1,10 +1,10 @@
-# ESLint config
+# ESLint Config
 
-These are settings for ESLint and Prettier used by Codemask.
+Package aims to quickly setup your eslint and prettier configs based on Codemask guidelines.
 
-## What it does
+## What it does?
 
-This package setup lints for your project. Check the .eslintrc.js file to see what is included. If you are using prettier you can copy config file as well.
+It simply extends ESLint and Prettier with rules used at Codemask. Check the .eslintrc.js file to see what is included. If you are using prettier you can copy config file as well.
 
 ## Installing
 
