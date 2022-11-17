@@ -13,7 +13,7 @@ It simply extends ESLint and Prettier with rules used at Codemask. Check the .es
 ```
 yarn add --dev eslint-config-codemask
 # please also install peerDependecy:
-yarn add yarn install --dev @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser eslint eslint-plugin-functional eslint-plugin-import eslint-plugin-jsdoc eslint-plugin-jsx-a11y eslint-plugin-nested-if eslint-plugin-no-else eslint-plugin-no-loops eslint-plugin-prefer-arrow eslint-plugin-react eslint-plugin-react-hooks
+yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser eslint eslint-plugin-functional eslint-plugin-import eslint-plugin-jsdoc eslint-plugin-jsx-a11y eslint-plugin-nested-if eslint-plugin-no-else eslint-plugin-no-loops eslint-plugin-prefer-arrow eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 
