@@ -248,7 +248,8 @@ module.exports = {
         "nested-if/nested-if-statements": ["error", 2],
         "functional/no-let": "error",
         "functional/immutable-data": ["error", {
-            ignoreImmediateMutation: true
+            ignoreImmediateMutation: true,
+            ignoreAccessorPattern: "**.current"
         }],
         "no-else/no-else": 2
     }
