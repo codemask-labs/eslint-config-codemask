@@ -123,7 +123,7 @@ module.exports = {
             "accessibility": "explicit"
         }],
         "@typescript-eslint/indent": [
-            "off",
+            "error",
             4,
             {
                 "ArrayExpression": "first",
