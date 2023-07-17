@@ -210,7 +210,7 @@ module.exports = {
         "no-trailing-spaces": "error",
         "no-undef-init": "error",
         "no-unsafe-finally": "error",
-        "no-unused-vars": "error",
+        "no-unused-vars": "off",
         "no-unused-labels": "error",
         "no-var": "error",
         "object-shorthand": "error",
@@ -250,6 +250,7 @@ module.exports = {
             ignoreImmediateMutation: true,
             ignoreAccessorPattern: "**.current"
         }],
-        "no-else/no-else": 2
+        "no-else/no-else": 2,
+        "@typescript-eslint/no-unused-vars": "error"
     }
 }
