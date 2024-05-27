@@ -17,9 +17,7 @@ It simply extends ESLint and Prettier with rules used at Codemask. Check the `es
 1. In your project folder, run:
 
 ```
-yarn add --dev eslint-config-codemask
-# please also install peerDependecy:
-yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser eslint eslint-plugin-functional eslint-plugin-import eslint-plugin-jsdoc eslint-plugin-jsx-a11y eslint-plugin-nested-if eslint-plugin-no-else eslint-plugin-prefer-arrow eslint-plugin-react eslint-plugin-react-hooks @eslint/js typescript-eslint
+yarn add --dev eslint eslint-config-codemask
 ```
 
 2. Create (or update) a `eslint.config.js` file with the following content:
