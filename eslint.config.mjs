@@ -1,22 +1,22 @@
-const js = require('@eslint/js')
-const tseslint = require('typescript-eslint')
-const tsParser = require('@typescript-eslint/parser')
-const tsEslint = require('@typescript-eslint/eslint-plugin')
-const preferArrow = require('eslint-plugin-prefer-arrow')
-const react = require('eslint-plugin-react')
-const nestedIf = require('eslint-plugin-nested-if')
-const functional = require('eslint-plugin-functional')
-const noElse = require('eslint-plugin-no-else')
-const reactNative = require('eslint-plugin-react-native')
-const reactHooks = require('eslint-plugin-react-hooks')
-const imports = require('eslint-plugin-import')
-const a11y = require('eslint-plugin-jsx-a11y')
-const { fixupPluginRules } = require('@eslint/compat')
+import js from '@eslint/js'
+import tsEslintBase from 'typescript-eslint'
+import tsParser from '@typescript-eslint/parser'
+import tsEslint from '@typescript-eslint/eslint-plugin'
+import preferArrow from 'eslint-plugin-prefer-arrow'
+import react from 'eslint-plugin-react'
+import nestedIf from 'eslint-plugin-nested-if'
+import functional from 'eslint-plugin-functional'
+import noElse from 'eslint-plugin-no-else'
+import reactNative from 'eslint-plugin-react-native'
+import reactHooks from 'eslint-plugin-react-hooks'
+import imports from 'eslint-plugin-import'
+import a11y from 'eslint-plugin-jsx-a11y'
+import { fixupPluginRules } from '@eslint/compat'
 
-module.exports = [
+export default [
     js.configs.recommended,
-    ...tseslint.config(
-        ...tseslint.configs.recommended
+    ...tsEslintBase.config(
+        ...tsEslintBase.configs.recommended
     ),
     {
         ignores: ['.eslintrc.js ', 'node_modules', '@typescript-eslint/parser'],
@@ -34,16 +34,8 @@ module.exports = [
             },
         },
         plugins: {
-            '@typescript-eslint': tsEslint,
-            'prefer-arrow': preferArrow,
-            'nested-if': nestedIf,
             'no-else': noElse,
-            react: fixupPluginRules(react),
-            functional,
-            'react-native': fixupPluginRules(reactNative),
-            'react-hooks': reactHooks,
-            'jsx-a11y': a11y,
-            'import': imports
+            'jsx-a11y': a11y
         },
         settings: {
             react: {
@@ -51,7 +43,6 @@ module.exports = [
             }
         },
         rules: {
-            // built-in rules
             'array-callback-return': 'error',
             'getter-return': 'warn',
             'no-setter-return': 'warn',
@@ -62,14 +53,15 @@ module.exports = [
             'no-self-assign': 'error',
             'no-unexpected-multiline': 'warn',
             'no-unreachable': 'warn',
-            'class-methods-use-this': 'warn',
             'default-case-last': 'warn',
             'default-param-last': 'warn',
             'max-depth': ['error', 3],
             'no-alert': 'warn',
             'no-continue': 'error',
             'no-delete-var': 'error',
-            'no-empty-function': 'warn',
+            'no-empty-function': ['warn', {
+                allow: ['constructors']
+            }],
             'no-extra-boolean-cast': 'warn',
             'no-extra-label': 'error',
             'no-implicit-coercion': 'error',
@@ -85,7 +77,6 @@ module.exports = [
             'no-unneeded-ternary': 'warn',
             'no-useless-catch': 'warn',
             'no-useless-concat': 'warn',
-            'no-useless-constructor': 'warn',
             'no-useless-return': 'warn',
             'no-useless-escape': 'warn',
             'no-useless-rename': 'warn',
@@ -124,7 +115,6 @@ module.exports = [
             'no-redeclare': 'error',
             'no-return-await': 'error',
             'no-sequences': 'error',
-            'no-shadow': 'warn',
             'no-sparse-arrays': 'error',
             'no-template-curly-in-string': 'error',
             'no-undef-init': 'error',
@@ -144,8 +134,14 @@ module.exports = [
                 'skipBlankLines': true,
                 'skipComments': true
             }],
-            'no-else-return': ['error', { allowElseIf: false }],
-            // typescript-eslint rules
+            'no-else-return': ['error', { allowElseIf: false }]
+        }
+    },
+    {
+        plugins: {
+            '@typescript-eslint': tsEslint
+        },
+        rules: {
             '@typescript-eslint/adjacent-overload-signatures': 'error',
             '@typescript-eslint/array-type': [
                 'error',
@@ -214,8 +210,7 @@ module.exports = [
                     'FunctionExpression': {
                         'parameters': 'first'
                     },
-                    'SwitchCase': 1,
-                    'ignoredNodes': ['ClassBody.body > PropertyDefinition[decorators.length > 0] > .key']
+                    'SwitchCase': 1
                 }
             ],
             '@typescript-eslint/interface-name-prefix': 'off',
@@ -244,23 +239,44 @@ module.exports = [
                 'lib': 'always'
             }],
             '@typescript-eslint/unified-signatures': 'error',
-            // plugins rules
-            'prefer-arrow/prefer-arrow-functions': ['warn', {
-                'disallowPrototype': true,
-                'singleReturnOnly': false,
-                'classPropertiesAllowed': false
+        }
+    },
+    {
+        plugins: {
+            react: fixupPluginRules(react),
+            'react-native': fixupPluginRules(reactNative),
+            'react-hooks': reactHooks,
+        },
+        rules: {
+            'jsx-quotes': ['error', 'prefer-double'],
+            'react-hooks/rules-of-hooks': 'error',
+            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has|are)[A-Z]([A-Za-z0-9]?)+' }],
+            'react/jsx-wrap-multilines': ['error', {
+                'declaration': 'parens-new-line',
+                'assignment': 'parens-new-line',
+                'return': 'parens-new-line',
+                'arrow': 'parens-new-line',
+                'condition': 'parens-new-line',
+                'logical': 'parens-new-line',
+                'prop': 'parens-new-line'
             }],
-            'nested-if/nested-if-statements': 'error',
-            'functional/no-let': 'error',
-            'functional/functional-parameters': ['warn', {
-                enforceParameterCount: false
-            }],
-            'functional/immutable-data': ['error', {
-                ignoreImmediateMutation: true,
-                ignoreAccessorPattern: '**.current'
-            }],
-            'functional/no-loop-statements': 'error',
-            'functional/prefer-tacit': 'warn',
+            'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+            'react/hook-use-state': 'error',
+            'react/self-closing-comp': 'error',
+            'react/jsx-key': 'error',
+            'react/jsx-equals-spacing': [2, 'never'],
+            'react/jsx-curly-spacing': 'error',
+            'react/jsx-boolean-value': 'error',
+            'react/jsx-fragments': ['error', 'element'],
+            'react/no-children-prop': 'error',
+            'react-native/no-inline-styles': 'warn',
+            'react-native/no-raw-text': 'error',
+            'react-hooks/exhaustive-deps': 'off'
+        }
+    },
+    {
+        'import': imports,
+        rules: {
             'import/no-extraneous-dependencies': 'off',
             'import/no-internal-modules': 'off',
             'import/order': ['error', {
@@ -274,6 +290,11 @@ module.exports = [
                     },
                     {
                         pattern: 'features/**',
+                        group: 'external',
+                        position: 'after'
+                    },
+                    {
+                        pattern: 'modules/**',
                         group: 'external',
                         position: 'after'
                     },
@@ -305,30 +326,43 @@ module.exports = [
                 ],
                 pathGroupsExcludedImportTypes: ['builtin']
             }],
-            'jsx-quotes': ['error', 'prefer-double'],
-            'react-hooks/rules-of-hooks': 'error',
-            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has|are)[A-Z]([A-Za-z0-9]?)+' }],
-            'react/jsx-wrap-multilines': ['error', {
-                'declaration': 'parens-new-line',
-                'assignment': 'parens-new-line',
-                'return': 'parens-new-line',
-                'arrow': 'parens-new-line',
-                'condition': 'parens-new-line',
-                'logical': 'parens-new-line',
-                'prop': 'parens-new-line'
+        }
+    },
+    {
+        plugins: {
+            'prefer-arrow': preferArrow,
+        },
+        rules: {
+            'prefer-arrow/prefer-arrow-functions': ['warn', {
+                'disallowPrototype': true,
+                'singleReturnOnly': false,
+                'classPropertiesAllowed': false
             }],
-            'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
-            'react/hook-use-state': 'error',
-            'react/self-closing-comp': 'error',
-            'react/jsx-key': 'error',
-            'react/jsx-equals-spacing': [2, 'never'],
-            'react/jsx-curly-spacing': 'error',
-            'react/jsx-boolean-value': 'error',
-            'react/jsx-fragments': ['error', 'element'],
-            'react/no-children-prop': 'error',
-            'react-native/no-inline-styles': 'warn',
-            'react-native/no-raw-text': 'error',
-            'react-hooks/exhaustive-deps': 'off'
+        }
+    },
+    {
+        plugins: {
+            'nested-if': nestedIf,
+        },
+        rules: {
+            'nested-if/nested-if-statements': 'error',
+        }
+    },
+    {
+        plugins: {
+            functional
+        },
+        rules: {
+            'functional/no-let': 'error',
+            'functional/functional-parameters': ['warn', {
+                enforceParameterCount: false
+            }],
+            'functional/immutable-data': ['error', {
+                ignoreImmediateMutation: true,
+                ignoreAccessorPattern: '**.current'
+            }],
+            'functional/no-loop-statements': 'error',
+            'functional/prefer-tacit': 'warn',
         }
     }
 ]

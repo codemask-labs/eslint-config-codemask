@@ -25,8 +25,36 @@ yarn add --dev eslint eslint-config-codemask
 ```js
 import codemaskConfig from 'eslint-config-codemask'
 
-module.exports = [
+export default [
     ...codemaskConfig
 ]
 ```
+
+3. Add prettier (optional)
+
+```shell
+yarn add prettier --dev
+```
+
+Copy `.prettierrc` file to your project root folder.
+
+Simply extend the config with one rule:
+
+```diff
+import codemaskConfig from 'eslint-config-codemask'
++import prrettier from 'prettier
+
+module.exports = [
+    ...codemaskConfig,
++    {
++        rules: {
++            '@typescript-eslint/indent': 'off'
++        }
++    }
+]
+```
 ---
+
+4. Editorconfig (optional)
+
+Copy `.editorconfig` file to your project root folder.
