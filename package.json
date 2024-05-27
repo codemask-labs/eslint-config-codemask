@@ -6,6 +6,7 @@
   "author": "Codemask Labs",
   "license": "MIT",
   "dependencies": {
+    "@eslint/compat": ">=1.x",
     "@eslint/js": ">=9.x",
     "@typescript-eslint/eslint-plugin": ">=7.x",
     "@typescript-eslint/eslint-plugin-tslint": ">=7.x",
