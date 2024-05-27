@@ -12,7 +12,7 @@ const reactHooks = require('eslint-plugin-react-hooks')
 const unusedImports = require('eslint-plugin-unused-imports')
 const imports = require('eslint-plugin-import')
 const a11y = require('eslint-plugin-jsx-a11y')
-const { fixupConfigRules } = require('@eslint/compat')
+const { fixupPluginRules } = require('@eslint/compat')
 
 module.exports = [
     js.configs.recommended,
@@ -39,9 +39,9 @@ module.exports = [
             'prefer-arrow': preferArrow,
             'nested-if': nestedIf,
             'no-else': noElse,
-            react,
+            react: fixupPluginRules(react),
             functional,
-            'react-native': reactNative,
+            'react-native': fixupPluginRules(reactNative),
             'react-hooks': reactHooks,
             'unused-imports': unusedImports,
             'jsx-a11y': a11y,
@@ -59,7 +59,6 @@ module.exports = [
             'no-setter-return': 'warn',
             'no-const-assign': 'error',
             'no-debugger': 'error',
-            'no-duplicate-keys': 'error',
             'no-dupe-args': 'error',
             'no-import-assign': 'error',
             'no-self-assign': 'error',
@@ -271,32 +270,29 @@ module.exports = [
             }],
             'jsx-quotes': ['error', 'prefer-double'],
             'react-hooks/rules-of-hooks': 'error',
-            'unused-imports/no-unused-imports': 'error'
+            'unused-imports/no-unused-imports': 'error',
+            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has)[A-Z]([A-Za-z0-9]?)+' }],
+            'react/jsx-wrap-multilines': ['error', {
+                'declaration': 'parens-new-line',
+                'assignment': 'parens-new-line',
+                'return': 'parens-new-line',
+                'arrow': 'parens-new-line',
+                'condition': 'parens-new-line',
+                'logical': 'parens-new-line',
+                'prop': 'parens-new-line'
+            }],
+            'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+            'react/hook-use-state': 'error',
+            'react/self-closing-comp': 'error',
+            'react/jsx-key': 'error',
+            'react/jsx-equals-spacing': [2, 'never'],
+            'react/jsx-curly-spacing': 'error',
+            'react/jsx-boolean-value': 'error',
+            'react/jsx-fragments': ['error', 'element'],
+            'react/no-children-prop': 'error',
+            'react-native/no-inline-styles': 'warn',
+            'react-native/no-raw-text': 'error',
+            'react-hooks/exhaustive-deps': 'off'
         }
-    },
-    // waiting for updates
-    ...fixupConfigRules({
-        'react/boolean-prop-naming': ['error', { 'rule': '^(is|has)[A-Z]([A-Za-z0-9]?)+' }],
-        'react/jsx-wrap-multilines': ['error', {
-            'declaration': 'parens-new-line',
-            'assignment': 'parens-new-line',
-            'return': 'parens-new-line',
-            'arrow': 'parens-new-line',
-            'condition': 'parens-new-line',
-            'logical': 'parens-new-line',
-            'prop': 'parens-new-line'
-        }],
-        'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
-        'react/hook-use-state': 'error',
-        'react/self-closing-comp': 'error',
-        'react/jsx-key': 'error',
-        'react/jsx-equals-spacing': [2, 'never'],
-        'react/jsx-curly-spacing': 'error',
-        'react/jsx-boolean-value': 'error',
-        'react/jsx-fragments': ['error', 'element'],
-        'react/no-children-prop': 'error',
-        'react-native/no-inline-styles': 'warn',
-        'react-native/no-raw-text': 'error',
-        'react-hooks/exhaustive-deps': 'off'
-    })
+    }
 ]
