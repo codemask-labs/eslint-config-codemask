@@ -1,3 +1,3 @@
-const codemaskConfig = require('eslint.config')
+import codemaskConfig from 'eslint.config.mjs'
 
-module.exports = codemaskConfig
+export default codemaskConfig

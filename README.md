@@ -10,7 +10,7 @@ Package aims to quickly setup your eslint and prettier configs based on Codemask
 
 ## What it does?
 
-It simply extends ESLint and Prettier with rules used at Codemask. Check the `eslint.config.js` file to see what is included. If you are using prettier you can copy config file as well.
+It simply extends ESLint and Prettier with rules used at Codemask. Check the `eslint.config.mjs` file to see what is included. If you are using prettier you can copy config file as well.
 
 ## Installing
 
@@ -20,7 +20,7 @@ It simply extends ESLint and Prettier with rules used at Codemask. Check the `es
 yarn add --dev eslint eslint-config-codemask
 ```
 
-2. Create (or update) a `eslint.config.js` file with the following content:
+2. Create (or update) a `eslint.config.mjs` file with the following content:
 
 ```js
 import codemaskConfig from 'eslint-config-codemask'
@@ -43,7 +43,7 @@ Simply extend the config with one rule:
 ```diff
 import codemaskConfig from 'eslint-config-codemask'
 
-module.exports = [
+export default [
     ...codemaskConfig,
 +    {
 +        rules: {

@@ -3,6 +3,7 @@
     "version": "2.0.0-beta.7",
     "description": "Codemask ESLint configuration",
     "main": "index.js",
+    "type": "module",
     "author": "Codemask Labs",
     "license": "MIT",
     "dependencies": {
