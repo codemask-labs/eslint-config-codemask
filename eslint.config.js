@@ -16,7 +16,7 @@ import { fixupPluginRules } from '@eslint/compat'
 export default [
     js.configs.recommended,
     ...tsEslintBase.config(
-        ...tsEslintBase.configs.recommended
+        ...tsEslintBase.configs.recommendedTypeChecked
     ),
     {
         ignores: ['.eslintrc.js ', 'node_modules', '@typescript-eslint/parser'],
@@ -239,6 +239,26 @@ export default [
                 'lib': 'always'
             }],
             '@typescript-eslint/unified-signatures': 'error',
+            '@typescript-eslint/naming-convention': ['error',
+                {
+                    selector: [
+                        'typeParameter',
+                        'classMethod',
+                        'classProperty',
+                        'function',
+                        'objectLiteralProperty',
+                        'parameter',
+                        'typeMethod',
+                        'typeParameter',
+                        'typeProperty'
+                    ],
+                    format: ['camelCase']
+                },
+                {
+                    selector: ['class', 'enum', 'enumMember', 'interface', 'typeAlias'],
+                    format: ['PascalCase']
+                }
+            ]
         }
     },
     {
