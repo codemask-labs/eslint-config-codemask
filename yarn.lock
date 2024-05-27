@@ -21,6 +21,11 @@
   resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.10.0.tgz#548f6de556857c8bb73bbee70c35dc82a2e74d63"
   integrity sha512-Cu96Sd2By9mCNTx2iyKOmq10v22jUVQv0lQnlGNy16oE9589yE+QADPbrMGCkA51cKZSg3Pu/aTJVTGfL/qjUA==
 
+"@eslint/compat@>=1.x":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@eslint/compat/-/compat-1.0.1.tgz#f8cdd9e3cf6c29b37ba02f2c5130ada406ca64ca"
+  integrity sha512-jIstH3YKraEe4HRQ77ux12ZLRxPzehmcdjRSRrSePiwf6s4G9DzdYl3L5CKSXWt4JyzXxy2p7MXFU7630Gz8PA==
+
 "@eslint/eslintrc@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-3.1.0.tgz#dbd3482bfd91efa663cbe7aa1f506839868207b6"
@@ -756,7 +761,7 @@ eslint-plugin-import@>=2.x:
     semver "^6.3.1"
     tsconfig-paths "^3.15.0"
 
-eslint-plugin-jsx-a11y@^6.8.0:
+eslint-plugin-jsx-a11y@>=6.x:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.8.0.tgz#2fa9c701d44fcd722b7c771ec322432857fcbad2"
   integrity sha512-Hdh937BS3KdwwbBaKd5+PLCOmYY6U4f2h9Z2ktwtNKvIdIEu137rjYbcb9ApSbVJfWxANNuiKTD/9tOKjK9qOA==
@@ -836,7 +841,7 @@ eslint-plugin-react@>=7.x:
     semver "^6.3.1"
     string.prototype.matchall "^4.0.10"
 
-eslint-plugin-unused-imports@>=4.0.0:
+eslint-plugin-unused-imports@>=4.x:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-unused-imports/-/eslint-plugin-unused-imports-4.0.0.tgz#93f3a7ee6088221e4a1d7127866e05d5917a9f65"
   integrity sha512-mzM+y2B7XYpQryVa1usT+Y/BdNAtAZiXzwpSyDCboFoJN/LZRN67TNvQxKtuTK/Aplya3sLNQforiubzPPaIcQ==

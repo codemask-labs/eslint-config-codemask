@@ -10,7 +10,9 @@ const noElse = require('eslint-plugin-no-else')
 const reactNative = require('eslint-plugin-react-native')
 const reactHooks = require('eslint-plugin-react-hooks')
 const unusedImports = require('eslint-plugin-unused-imports')
+const imports = require('eslint-plugin-import')
 const a11y = require('eslint-plugin-jsx-a11y')
+const { fixupConfigRules } = require('@eslint/compat')
 
 module.exports = [
     js.configs.recommended,
@@ -42,7 +44,8 @@ module.exports = [
             'react-native': reactNative,
             'react-hooks': reactHooks,
             'unused-imports': unusedImports,
-            'jsx-a11y': a11y
+            'jsx-a11y': a11y,
+            'import': imports
         },
         settings: {
             react: {
@@ -52,25 +55,25 @@ module.exports = [
         rules: {
             // built-in rules
             'array-callback-return': 'error',
-            'getter-return': 'warning',
-            'no-setter-return': 'warning',
+            'getter-return': 'warn',
+            'no-setter-return': 'warn',
             'no-const-assign': 'error',
             'no-debugger': 'error',
             'no-duplicate-keys': 'error',
             'no-dupe-args': 'error',
             'no-import-assign': 'error',
             'no-self-assign': 'error',
-            'no-unexpected-multiline': 'warning',
-            'no-unreachable': 'warning',
-            'class-methods-use-this': 'warning',
-            'default-case-last': 'warning',
-            'default-param-last': 'warning',
+            'no-unexpected-multiline': 'warn',
+            'no-unreachable': 'warn',
+            'class-methods-use-this': 'warn',
+            'default-case-last': 'warn',
+            'default-param-last': 'warn',
             'max-depth': ['error', 3],
-            'no-alert': 'warning',
+            'no-alert': 'warn',
             'no-continue': 'error',
             'no-delete-var': 'error',
-            'no-empty-function': 'warning',
-            'no-extra-boolean-cast': 'warning',
+            'no-empty-function': 'warn',
+            'no-extra-boolean-cast': 'warn',
             'no-extra-label': 'error',
             'no-implicit-coercion': 'error',
             'no-implied-eval': 'error',
@@ -82,22 +85,22 @@ module.exports = [
                 'error',
                 'while', 'do', 'for', 'else', 'continue', 'with', 'let', 'var'
             ],
-            'no-unneeded-ternary': 'warning',
-            'no-useless-catch': 'warning',
-            'no-useless-concat': 'warning',
-            'no-useless-constructor': 'warning',
-            'no-useless-return': 'warning',
-            'no-useless-escape': 'warning',
-            'no-useless-rename': 'warning',
+            'no-unneeded-ternary': 'warn',
+            'no-useless-catch': 'warn',
+            'no-useless-concat': 'warn',
+            'no-useless-constructor': 'warn',
+            'no-useless-return': 'warn',
+            'no-useless-escape': 'warn',
+            'no-useless-rename': 'warn',
             'no-with': 'error',
-            'prefer-rest-params': 'warning',
-            'require-await': 'warning',
+            'prefer-rest-params': 'warn',
+            'require-await': 'warn',
             'yoda': 'error',
             'eqeqeq': 'error',
             'prefer-template': 'error',
-            'no-underscore-dangle': 'warning',
+            'no-underscore-dangle': 'warn',
             'no-unused-expressions': 'off',
-            'camelcase': 'warning',
+            'camelcase': 'warn',
             'one-var': 'error',
             'arrow-body-style': ['error', 'as-needed'],
             'constructor-super': 'error',
@@ -110,10 +113,10 @@ module.exports = [
             'no-bitwise': 'error',
             'no-caller': 'error',
             'no-cond-assign': 'error',
-            'no-console': 'warning',
+            'no-console': 'warn',
             'no-duplicate-case': 'error',
             'no-duplicate-imports': 'error',
-            'no-empty': 'warning',
+            'no-empty': 'warn',
             'no-eval': 'error',
             'no-extra-bind': 'error',
             'no-fallthrough': 'error',
@@ -125,7 +128,7 @@ module.exports = [
             'no-redeclare': 'error',
             'no-return-await': 'error',
             'no-sequences': 'error',
-            'no-shadow': 'warning',
+            'no-shadow': 'warn',
             'no-sparse-arrays': 'error',
             'no-template-curly-in-string': 'error',
             'no-undef-init': 'error',
@@ -253,44 +256,47 @@ module.exports = [
             }],
             'nested-if/nested-if-statements': 'error',
             'functional/no-let': 'error',
-            'functional/functional-parameters': 'warning',
+            'functional/functional-parameters': 'warn',
             'functional/immutable-data': ['error', {
                 ignoreImmediateMutation: true,
                 ignoreAccessorPattern: '**.current'
             }],
-            'functional/no-loop-statement': 'error',
-            'functional/prefer-tacit': 'warning',
+            'functional/no-loop-statements': 'error',
+            'functional/prefer-tacit': 'warn',
             'import/no-extraneous-dependencies': 'off',
             'import/no-internal-modules': 'off',
-            'import/order': ['warning', {
+            'import/order': ['warn', {
                 'groups': ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
                 'newlines-between': 'ignore'
             }],
-            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has)[A-Z]([A-Za-z0-9]?)+' }],
-            'react/jsx-wrap-multilines': ['error', {
-                'declaration': 'parens-new-line',
-                'assignment': 'parens-new-line',
-                'return': 'parens-new-line',
-                'arrow': 'parens-new-line',
-                'condition': 'parens-new-line',
-                'logical': 'parens-new-line',
-                'prop': 'parens-new-line'
-            }],
-            'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
-            'react/hook-use-state': 'error',
-            'react/self-closing-comp': 'error',
-            'react/jsx-key': 'error',
-            'react/jsx-equals-spacing': [2, 'never'],
-            'react/jsx-curly-spacing': 'error',
-            'react/jsx-boolean-value': 'error',
-            'react/jsx-fragments': ['error', 'element'],
-            'react/no-children-prop': 'error',
             'jsx-quotes': ['error', 'prefer-double'],
             'react-hooks/rules-of-hooks': 'error',
-            'react-native/no-inline-styles': 'warning',
-            'react-native/no-raw-text': 'error',
-            'react-hooks/exhaustive-deps': 'off',
             'unused-imports/no-unused-imports': 'error'
         }
-    }
+    },
+    // waiting for updates
+    ...fixupConfigRules({
+        'react/boolean-prop-naming': ['error', { 'rule': '^(is|has)[A-Z]([A-Za-z0-9]?)+' }],
+        'react/jsx-wrap-multilines': ['error', {
+            'declaration': 'parens-new-line',
+            'assignment': 'parens-new-line',
+            'return': 'parens-new-line',
+            'arrow': 'parens-new-line',
+            'condition': 'parens-new-line',
+            'logical': 'parens-new-line',
+            'prop': 'parens-new-line'
+        }],
+        'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+        'react/hook-use-state': 'error',
+        'react/self-closing-comp': 'error',
+        'react/jsx-key': 'error',
+        'react/jsx-equals-spacing': [2, 'never'],
+        'react/jsx-curly-spacing': 'error',
+        'react/jsx-boolean-value': 'error',
+        'react/jsx-fragments': ['error', 'element'],
+        'react/no-children-prop': 'error',
+        'react-native/no-inline-styles': 'warn',
+        'react-native/no-raw-text': 'error',
+        'react-hooks/exhaustive-deps': 'off'
+    })
 ]
