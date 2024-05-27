@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-codemask",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "description": "Codemask ESLint configuration",
   "main": "index.js",
   "author": "Codemask Labs",
@@ -20,7 +20,6 @@
     "eslint-plugin-prefer-arrow": ">=1.x",
     "eslint-plugin-react": ">=7.x",
     "eslint-plugin-react-hooks": ">=4.x",
-    "eslint-plugin-react-native": ">=4.x",
-    "eslint-plugin-unused-imports": ">=4.x"
+    "eslint-plugin-react-native": ">=4.x"
   }
 }

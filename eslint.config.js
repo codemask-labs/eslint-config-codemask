@@ -9,7 +9,6 @@ const functional = require('eslint-plugin-functional')
 const noElse = require('eslint-plugin-no-else')
 const reactNative = require('eslint-plugin-react-native')
 const reactHooks = require('eslint-plugin-react-hooks')
-const unusedImports = require('eslint-plugin-unused-imports')
 const imports = require('eslint-plugin-import')
 const a11y = require('eslint-plugin-jsx-a11y')
 const { fixupPluginRules } = require('@eslint/compat')
@@ -43,7 +42,6 @@ module.exports = [
             functional,
             'react-native': fixupPluginRules(reactNative),
             'react-hooks': reactHooks,
-            'unused-imports': unusedImports,
             'jsx-a11y': a11y,
             'import': imports
         },
@@ -100,7 +98,6 @@ module.exports = [
             'no-underscore-dangle': 'warn',
             'no-unused-expressions': 'off',
             'camelcase': 'warn',
-            'one-var': 'error',
             'arrow-body-style': ['error', 'as-needed'],
             'constructor-super': 'error',
             'curly': 'error',
@@ -255,7 +252,9 @@ module.exports = [
             }],
             'nested-if/nested-if-statements': 'error',
             'functional/no-let': 'error',
-            'functional/functional-parameters': 'warn',
+            'functional/functional-parameters': ['warn', {
+                enforceParameterCount: false
+            }],
             'functional/immutable-data': ['error', {
                 ignoreImmediateMutation: true,
                 ignoreAccessorPattern: '**.current'
@@ -264,14 +263,51 @@ module.exports = [
             'functional/prefer-tacit': 'warn',
             'import/no-extraneous-dependencies': 'off',
             'import/no-internal-modules': 'off',
-            'import/order': ['warn', {
-                'groups': ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
-                'newlines-between': 'ignore'
+            'import/order': ['error', {
+                groups: [['builtin', 'external'], 'internal', ['sibling', 'parent'], 'index'],
+                warnOnUnassignedImports: true,
+                pathGroups: [
+                    {
+                        pattern: 'lib/**',
+                        group: 'external',
+                        position: 'after'
+                    },
+                    {
+                        pattern: 'features/**',
+                        group: 'external',
+                        position: 'after'
+                    },
+                    {
+                        pattern: 'common/**',
+                        group: 'external',
+                        position: 'after'
+                    },
+                    {
+                        pattern: 'assets/**',
+                        group: 'external',
+                        position: 'after'
+                    },
+                    {
+                        pattern: 'react',
+                        group: 'external',
+                        position: 'before'
+                    },
+                    {
+                        pattern: 'react-native',
+                        group: 'external',
+                        position: 'before'
+                    },
+                    {
+                        pattern: '@nestjs/**',
+                        group: 'external',
+                        position: 'before'
+                    }
+                ],
+                pathGroupsExcludedImportTypes: ['builtin']
             }],
             'jsx-quotes': ['error', 'prefer-double'],
             'react-hooks/rules-of-hooks': 'error',
-            'unused-imports/no-unused-imports': 'error',
-            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has)[A-Z]([A-Za-z0-9]?)+' }],
+            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has|are)[A-Z]([A-Za-z0-9]?)+' }],
             'react/jsx-wrap-multilines': ['error', {
                 'declaration': 'parens-new-line',
                 'assignment': 'parens-new-line',
