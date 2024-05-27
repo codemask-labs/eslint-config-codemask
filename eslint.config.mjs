@@ -1,19 +1,19 @@
-const js = require('@eslint/js')
-const tsEslintBase = require('typescript-eslint')
-const tsParser = require('@typescript-eslint/parser')
-const tsEslint = require('@typescript-eslint/eslint-plugin')
-const preferArrow = require('eslint-plugin-prefer-arrow')
-const react = require('eslint-plugin-react')
-const nestedIf = require('eslint-plugin-nested-if')
-const functional = require('eslint-plugin-functional')
-const noElse = require('eslint-plugin-no-else')
-const reactNative = require('eslint-plugin-react-native')
-const reactHooks = require('eslint-plugin-react-hooks')
-const imports = require('eslint-plugin-import')
-const a11y = require('eslint-plugin-jsx-a11y')
-const { fixupPluginRules } = require('@eslint/compat')
+import js from '@eslint/js'
+import tsEslintBase from 'typescript-eslint'
+import tsParser from '@typescript-eslint/parser'
+import tsEslint from '@typescript-eslint/eslint-plugin'
+import preferArrow from 'eslint-plugin-prefer-arrow'
+import react from 'eslint-plugin-react'
+import nestedIf from 'eslint-plugin-nested-if'
+import functional from 'eslint-plugin-functional'
+import noElse from 'eslint-plugin-no-else'
+import reactNative from 'eslint-plugin-react-native'
+import reactHooks from 'eslint-plugin-react-hooks'
+import imports from 'eslint-plugin-import'
+import a11y from 'eslint-plugin-jsx-a11y'
+import { fixupPluginRules } from '@eslint/compat'
 
-module.exports = [
+export default [
     js.configs.recommended,
     ...tsEslintBase.config(
         ...tsEslintBase.configs.recommended
@@ -275,7 +275,9 @@ module.exports = [
         }
     },
     {
-        'import': imports,
+        plugins: {
+            'import': imports,
+        },
         rules: {
             'import/no-extraneous-dependencies': 'off',
             'import/no-internal-modules': 'off',
