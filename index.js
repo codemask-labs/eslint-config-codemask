@@ -1,3 +1,3 @@
-import codemaskRules from './eslint.config.mjs'
+const codemaskConfig = require('eslint.config')
 
-export default codemaskRules
+module.exports = codemaskConfig

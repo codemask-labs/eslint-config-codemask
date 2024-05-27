@@ -42,7 +42,6 @@ Simply extend the config with one rule:
 
 ```diff
 import codemaskConfig from 'eslint-config-codemask'
-+import prrettier from 'prettier
 
 module.exports = [
     ...codemaskConfig,
