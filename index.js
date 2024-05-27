@@ -1,3 +1,3 @@
-import codemaskConfig from 'eslint.config.mjs'
+import codemaskConfig from './eslint.config'
 
 export default codemaskConfig
