@@ -57,3 +57,29 @@ export default [
 4. Editorconfig (optional)
 
 Copy `.editorconfig` file to your project root folder.
+
+5. React Native (optional)
+
+```
+yarn add eslint-plugin-react-native --dev
+```
+
+```js
+import reactNative from 'eslint-plugin-react-native'
+import { fixupPluginRules } from '@eslint/compat'
+
+export default [
+    ...codemaskConfig,
+    {
+        plugins: {
+            'react-native': fixupPluginRules(reactNative),
+        },
+        rules: {
+            'react-native/no-raw-text': ['error', {
+                skip: ['Typography']
+            }],
+            'react-native/no-inline-styles': 'warn'
+        }
+    }
+]
+```

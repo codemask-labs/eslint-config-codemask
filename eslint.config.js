@@ -7,7 +7,6 @@ import react from 'eslint-plugin-react'
 import nestedIf from 'eslint-plugin-nested-if'
 import functional from 'eslint-plugin-functional'
 import noElse from 'eslint-plugin-no-else'
-import reactNative from 'eslint-plugin-react-native'
 import reactHooks from 'eslint-plugin-react-hooks'
 import imports from 'eslint-plugin-import'
 import a11y from 'eslint-plugin-jsx-a11y'
@@ -252,25 +251,30 @@ export default [
                         'typeParameter',
                         'typeProperty'
                     ],
-                    format: ['camelCase']
+                    format: ['camelCase', 'snake_case', 'UPPER_CASE']
                 },
                 {
                     selector: ['class', 'enum', 'enumMember', 'interface', 'typeAlias'],
                     format: ['PascalCase']
                 }
-            ]
+            ],
+            '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+            '@typescript-eslint/no-unsafe-assignment': 'off',
+            '@typescript-eslint/no-misused-promises': 'off',
+            '@typescript-eslint/no-unsafe-call': 'off',
+            '@typescript-eslint/no-unsafe-member-access': 'off',
+            '@typescript-eslint/no-unsafe-enum-comparison': 'off',
         }
     },
     {
         plugins: {
             react: fixupPluginRules(react),
-            'react-native': fixupPluginRules(reactNative),
             'react-hooks': reactHooks,
         },
         rules: {
             'jsx-quotes': ['error', 'prefer-double'],
             'react-hooks/rules-of-hooks': 'error',
-            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has|are)[A-Z]([A-Za-z0-9]?)+' }],
+            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has|are|with)[A-Z]([A-Za-z0-9]?)+' }],
             'react/jsx-wrap-multilines': ['error', {
                 'declaration': 'parens-new-line',
                 'assignment': 'parens-new-line',
@@ -289,8 +293,6 @@ export default [
             'react/jsx-boolean-value': 'error',
             'react/jsx-fragments': ['error', 'element'],
             'react/no-children-prop': 'error',
-            'react-native/no-inline-styles': 'warn',
-            'react-native/no-raw-text': 'error',
             'react-hooks/exhaustive-deps': 'off'
         }
     },
