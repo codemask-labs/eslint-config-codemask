@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-codemask",
-    "version": "2.0.0-beta.10",
+    "version": "2.0.0-beta.11",
     "description": "Codemask ESLint configuration",
     "main": "index.js",
     "type": "module",
@@ -21,7 +21,6 @@
         "eslint-plugin-prefer-arrow": ">=1.x",
         "eslint-plugin-react": ">=7.x",
         "eslint-plugin-react-hooks": ">=4.x",
-        "eslint-plugin-react-native": ">=4.x",
         "typescript-eslint": ">=7.x"
     }
 }
