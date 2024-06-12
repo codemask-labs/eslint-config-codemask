@@ -274,7 +274,7 @@ export default [
         rules: {
             'jsx-quotes': ['error', 'prefer-double'],
             'react-hooks/rules-of-hooks': 'error',
-            'react/boolean-prop-naming': ['error', { 'rule': '^(is|has|are|with)[A-Z]([A-Za-z0-9]?)+' }],
+            'react/boolean-prop-naming': ['error', { 'rule': '^((is|has|are|with)[A-Z]([A-Za-z0-9]?)|disabled)+' }],
             'react/jsx-wrap-multilines': ['error', {
                 'declaration': 'parens-new-line',
                 'assignment': 'parens-new-line',
@@ -285,7 +285,7 @@ export default [
                 'prop': 'parens-new-line'
             }],
             'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
-            'react/hook-use-state': 'error',
+            'react/hook-use-state': 'off',
             'react/self-closing-comp': 'error',
             'react/jsx-key': 'error',
             'react/jsx-equals-spacing': [2, 'never'],
