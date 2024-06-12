@@ -36,7 +36,7 @@ export default [
 yarn add prettier --dev
 ```
 
-Copy `.prettierrc` file to your project root folder, and extend the `eslint.config.mjs` config by adding the following rule:
+* Copy `.prettierrc` file to your project root folder, and extend the `eslint.config.mjs` config by adding the following rule:
 
 ```diff
 export default [
@@ -49,7 +49,7 @@ export default [
 ]
 ```
 
-Or, replace the `eslint.config.mjs` with below example:
+* Or, replace the `eslint.config.mjs` with below example:
 
 ```ts
 import codemaskConfig from 'eslint-config-codemask'
