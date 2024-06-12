@@ -36,7 +36,7 @@ export default [
 yarn add prettier --dev
 ```
 
-Make sure the `eslint.config.mjs` config includes the below rules to avoid conflicting `eslint`:
+Make sure the `eslint.config.mjs` config includes the below rules to avoid conflicting `eslint` with `prettier` formatting rules:
 
 ```ts
 import codemaskConfig from 'eslint-config-codemask'
