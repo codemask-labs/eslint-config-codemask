@@ -14,7 +14,7 @@ It simply extends ESLint and Prettier with rules used at Codemask. Check the `es
 
 ## Installing
 
-1. In your root project folder, run:
+1. Add `eslint` and `eslint-config-codemask` to your project:
 
 ```
 yarn add --dev eslint eslint-config-codemask
