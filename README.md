@@ -100,7 +100,7 @@ indent_size = 2
 
 ---
 
-### Adding React Native plugin
+### Adding React Native plugin (optional)
 
 1. Add `eslint-plguin-react-native` to your project
 
