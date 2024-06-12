@@ -36,20 +36,7 @@ export default [
 yarn add prettier --dev
 ```
 
-* Copy `.prettierrc` file to your project root folder, and extend the `eslint.config.mjs` config by adding the following rule:
-
-```diff
-export default [
-    ...codemaskConfig,
-+    {
-+        rules: {
-+            '@typescript-eslint/indent': 'off'
-+        }
-+    }
-]
-```
-
-* Or, replace the `eslint.config.mjs` with below example:
+Make sure the `eslint.config.mjs` config includes the below rules to avoid conflicting `eslint`:
 
 ```ts
 import codemaskConfig from 'eslint-config-codemask'
@@ -63,6 +50,7 @@ export default [
     }
 ]
 ```
+
 ---
 
 4. Editorconfig (optional)
