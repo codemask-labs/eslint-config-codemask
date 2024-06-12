@@ -98,6 +98,8 @@ indent_size = 2
 
 ```
 
+---
+
 ### Adding React Native plugin
 
 1. Add `eslint-plguin-react-native` to your project
