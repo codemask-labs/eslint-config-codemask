@@ -14,7 +14,7 @@ It simply extends ESLint and Prettier with rules used at Codemask. Check the `es
 
 ## Installing
 
-1. In your project folder, run:
+1. Add `eslint` and `eslint-config-codemask` to your project:
 
 ```
 yarn add --dev eslint eslint-config-codemask
@@ -30,39 +30,85 @@ export default [
 ]
 ```
 
-3. Add prettier (optional)
+---
+
+### Adding prettier (optional)
+
+1. Add `prettier` to your project
 
 ```shell
 yarn add prettier --dev
 ```
 
-Copy `.prettierrc` file to your project root folder.
+2. Create (or update) a `.prettierrc` file with the following content:
 
-Simply extend the config with one rule:
+```json
+{
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "printWidth": 150
+}
+```
 
-```diff
+3. Disable `eslint` conflicting rules with `prettier` (in `eslint.config.mjs`) for propper formatting:
+
+
+```ts
 import codemaskConfig from 'eslint-config-codemask'
 
 export default [
     ...codemaskConfig,
-+    {
-+        rules: {
-+            '@typescript-eslint/indent': 'off'
-+        }
-+    }
+    {
+        rules: {
+            '@typescript-eslint/indent': 'off'
+        }
+    }
 ]
 ```
+
 ---
 
-4. Editorconfig (optional)
+### Adding Editorconfig (optional)
 
-Copy `.editorconfig` file to your project root folder.
+1. Create (or update) `.editorconfig` file with the following content:
 
-5. React Native (optional)
+```conf
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+max_line_length = 150
+trim_trailing_whitespace = true
+
+[*.{sh,podspec,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[.*rc]
+indent_size = 2
+
+```
+
+---
+
+### Adding React Native plugin (optional)
+
+1. Add `eslint-plguin-react-native` to your project
 
 ```
 yarn add eslint-plugin-react-native --dev
 ```
+
+2. Include `react-native` plugin, and `react-native` rules:
 
 ```js
 import reactNative from 'eslint-plugin-react-native'
