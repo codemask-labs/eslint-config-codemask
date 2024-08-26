@@ -129,7 +129,7 @@ export default [
             'radix': 'error',
             'use-isnan': 'error',
             'valid-typeof': 'error',
-            '@stylistic/ts/comma-dangle': 'off',
+            '@stylistic/comma-dangle': 'off',
             'max-lines': ['error', {
                 'max': 500,
                 'skipBlankLines': true,
@@ -140,7 +140,8 @@ export default [
     },
     {
         plugins: {
-            '@typescript-eslint': tsEslint
+            '@typescript-eslint': tsEslint,
+            '@stylistic': stylistic
         },
         rules: {
             '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -180,7 +181,7 @@ export default [
                     }
                 }
             ],
-            '@typescript-eslint/comma-dangle': 'error',
+            '@stylistic/comma-dangle': 'error',
             '@typescript-eslint/no-duplicate-enum-values': 'error',
             '@typescript-eslint/no-useless-empty-export': 'error',
             '@typescript-eslint/prefer-enum-initializers': 'error',
@@ -233,7 +234,7 @@ export default [
             '@typescript-eslint/prefer-function-type': 'error',
             '@typescript-eslint/prefer-namespace-keyword': 'error',
             '@typescript-eslint/restrict-plus-operands': 'error',
-            '@typescript-eslint/semi': ['error', 'never'],
+            '@stylistic/semi': ['error', 'never'],
             '@typescript-eslint/triple-slash-reference': ['error', {
                 'path': 'always',
                 'types': 'prefer-import',
@@ -266,6 +267,9 @@ export default [
             '@typescript-eslint/no-unsafe-call': 'off',
             '@typescript-eslint/no-unsafe-member-access': 'off',
             '@typescript-eslint/no-unsafe-enum-comparison': 'off',
+            '@typescript-eslint/no-unused-expressions': 'off',
+            '@typescript-eslint/prefer-promise-reject-errors': 'off',
+            '@typescript-eslint/no-empty-object-type': 'off'
         }
     },
     {
