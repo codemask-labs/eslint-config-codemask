@@ -10,6 +10,7 @@ import noElse from 'eslint-plugin-no-else'
 import reactHooks from 'eslint-plugin-react-hooks'
 import imports from 'eslint-plugin-import'
 import a11y from 'eslint-plugin-jsx-a11y'
+import stylistic from '@stylistic/eslint-plugin'
 import { fixupPluginRules } from '@eslint/compat'
 
 export default [
@@ -34,7 +35,8 @@ export default [
         },
         plugins: {
             'no-else': noElse,
-            'jsx-a11y': a11y
+            'jsx-a11y': a11y,
+            '@stylistic': stylistic
         },
         settings: {
             react: {
@@ -127,7 +129,7 @@ export default [
             'radix': 'error',
             'use-isnan': 'error',
             'valid-typeof': 'error',
-            'comma-dangle': 'off',
+            '@stylistic/ts/comma-dangle': 'off',
             'max-lines': ['error', {
                 'max': 500,
                 'skipBlankLines': true,
@@ -150,7 +152,7 @@ export default [
             ],
             '@typescript-eslint/typedef': ['error'],
             '@typescript-eslint/await-thenable': 'error',
-            '@typescript-eslint/ban-types': [
+            '@typescript-eslint/no-restricted-types': [
                 'error',
                 {
                     'types': {
