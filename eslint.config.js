@@ -221,9 +221,9 @@ export default [
             '@typescript-eslint/prefer-namespace-keyword': 'error',
             '@typescript-eslint/restrict-plus-operands': 'error',
             '@stylistic/semi': ['error', 'never'],
-            '@stylistic/js/eol-last': ['error', 'always'],
-            '@stylistic/ts/comma-dangle': ['error', 'always-multiline'],
-            '@stylistic/ts/semi': ['error', 'never'],
+            '@stylistic/eol-last': ['error', 'always'],
+            '@stylistic/comma-dangle': ['error', 'always-multiline'],
+            '@stylistic/semi': ['error', 'never'],
             '@typescript-eslint/triple-slash-reference': [
                 'error',
                 {
