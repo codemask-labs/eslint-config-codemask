@@ -2,11 +2,10 @@
 
 Package aims to quickly setup your eslint and prettier configs based on Codemask guidelines.
 
-|Pkg version| Eslint version |
-|---|---------|
-| 2.x | \> 9.0  |
-| 1.x | < 9.0   |
-
+| Pkg version | Eslint version |
+| ----------- | -------------- |
+| 2.x         | \> 9.0         |
+| 1.x         | < 9.0          |
 
 ## What it does?
 
@@ -25,9 +24,7 @@ yarn add --dev eslint eslint-config-codemask
 ```js
 import codemaskConfig from 'eslint-config-codemask'
 
-export default [
-    ...codemaskConfig
-]
+export default [...codemaskConfig]
 ```
 
 ---
@@ -44,19 +41,17 @@ yarn add prettier --dev
 
 ```json
 {
-  "trailingComma": "none",
-  "semi": false,
-  "singleQuote": true,
-  "jsxSingleQuote": false,
-  "bracketSpacing": true,
-  "bracketSameLine": false,
-  "arrowParens": "avoid",
-  "printWidth": 150
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "arrowParens": "avoid",
+    "printWidth": 150
 }
 ```
 
 3. Disable `eslint` conflicting rules with `prettier` (in `eslint.config.mjs`) for propper formatting:
-
 
 ```ts
 import codemaskConfig from 'eslint-config-codemask'
@@ -65,9 +60,9 @@ export default [
     ...codemaskConfig,
     {
         rules: {
-            '@typescript-eslint/indent': 'off'
-        }
-    }
+            '@typescript-eslint/strict-boolean-expressionst': 'off',
+        },
+    },
 ]
 ```
 
@@ -92,10 +87,6 @@ trim_trailing_whitespace = true
 [*.{sh,podspec,yml,yaml}]
 indent_style = space
 indent_size = 2
-
-[.*rc]
-indent_size = 2
-
 ```
 
 ---
@@ -121,11 +112,14 @@ export default [
             'react-native': fixupPluginRules(reactNative),
         },
         rules: {
-            'react-native/no-raw-text': ['error', {
-                skip: ['Typography']
-            }],
-            'react-native/no-inline-styles': 'warn'
-        }
-    }
+            'react-native/no-raw-text': [
+                'error',
+                {
+                    skip: ['Typography'],
+                },
+            ],
+            'react-native/no-inline-styles': 'warn',
+        },
+    },
 ]
 ```
