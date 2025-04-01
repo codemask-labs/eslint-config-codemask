@@ -205,7 +205,7 @@ export default [
                     accessibility: 'explicit'
                 }
             ],
-            '@typescript-eslint/indent': [
+            indent: [
                 'error',
                 4,
                 {
