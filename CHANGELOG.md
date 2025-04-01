@@ -1,0 +1,33 @@
+# Changelog
+
+## 2.0.0-beta.16 (2025-04-01)
+
+### Features
+
+* add beta support for eslint 9 ([f37b3f7](https://github.com/codemask-labs/eslint-config-codemask/commit/f37b3f7a6fc5452f68edfdb3207b4df79b3c1cd0))
+* add beta support for eslint 9 ([66cd92a](https://github.com/codemask-labs/eslint-config-codemask/commit/66cd92ae2a09e8bff6541df5613b34e402c55605))
+* add camel case and pascal case rules ([c240774](https://github.com/codemask-labs/eslint-config-codemask/commit/c240774df12c78006a40071757604eb10a87b94d))
+* add config for import order plugin ([518f853](https://github.com/codemask-labs/eslint-config-codemask/commit/518f85368d0077bf29b5b3244727f838f8e9a4cb))
+* add info about prettier and editorconfig, adjust rules ([ab96306](https://github.com/codemask-labs/eslint-config-codemask/commit/ab9630624404f099e60ef7922611a881a087dad3))
+* add release-it ([23d4376](https://github.com/codemask-labs/eslint-config-codemask/commit/23d4376e5a40667011ef15ae8a92d90b425237c6))
+* add support for newest version of eslint ([5c180e0](https://github.com/codemask-labs/eslint-config-codemask/commit/5c180e0d7c4a16cb890222010161b6378b132454))
+* added improvements to no-unused-vars rule ([b73ad5d](https://github.com/codemask-labs/eslint-config-codemask/commit/b73ad5deeef722b38000bb4729964dca68c982b5))
+* allowed refs to mutate ([0ea2a21](https://github.com/codemask-labs/eslint-config-codemask/commit/0ea2a2162b13e96ea895a1cdeba1b93260873a1e))
+* convert back to require ([7878b52](https://github.com/codemask-labs/eslint-config-codemask/commit/7878b522afc79daa62bbe72b42ee9dad9e4174e4))
+* convert eslint to mjs ([14faef2](https://github.com/codemask-labs/eslint-config-codemask/commit/14faef21ef48d219c79001f5674ecdf1d4669bab))
+* remove rn rules, disable some unnecessary ones ([105117a](https://github.com/codemask-labs/eslint-config-codemask/commit/105117afaec22898f6b7e594266e63d97e3131e4))
+* reverted indent ([137e22d](https://github.com/codemask-labs/eslint-config-codemask/commit/137e22d0ee9328486f53b54a8fcce53db597f01e))
+* update other missing rules ([2f8b929](https://github.com/codemask-labs/eslint-config-codemask/commit/2f8b929757952b8b47774068b511d24350550142))
+* update ruleset ([d8991a9](https://github.com/codemask-labs/eslint-config-codemask/commit/d8991a91d77330ae1d544ba0b94e31ba04c615f4))
+* update version ([227d46c](https://github.com/codemask-labs/eslint-config-codemask/commit/227d46cc7a63fce440804de1cf70433faf6119a9))
+* updated deps ([c2ca1da](https://github.com/codemask-labs/eslint-config-codemask/commit/c2ca1dac1fb9ef37a3ceb311dcc23090d38aac10))
+* updated package with peer dependencies ([d333219](https://github.com/codemask-labs/eslint-config-codemask/commit/d33321969aed81752771249b4cb29784a02c9ef2))
+* updated packages ([76f1f22](https://github.com/codemask-labs/eslint-config-codemask/commit/76f1f220d8fa2ee3c823cd2ed5e99b41528a7cdc))
+
+### Bug Fixes
+
+* .prettierrc ([5fe8e44](https://github.com/codemask-labs/eslint-config-codemask/commit/5fe8e44227a5863c201a8f2f551e100bffb327ba))
+* import ([4d4e589](https://github.com/codemask-labs/eslint-config-codemask/commit/4d4e589a9df20c1b63879863a526e3c50124c55f))
+* import path ([eecf0d0](https://github.com/codemask-labs/eslint-config-codemask/commit/eecf0d0a16a00d0ce3cf69f32b52cc1b00c99561))
+* issue with react-hooks not working smoothly with eslint 9 ([54ada01](https://github.com/codemask-labs/eslint-config-codemask/commit/54ada015a00ae93bdb61b644b74245228146c28a))
+* some rules, add compat ([73b5361](https://github.com/codemask-labs/eslint-config-codemask/commit/73b53614025d39ad1d27dfa54eafad40f748913b))
