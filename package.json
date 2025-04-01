@@ -9,6 +9,10 @@
     "publishConfig": {
         "access": "public"
     },
+    "files": [
+        "index.js",
+        "eslint.config.js"
+    ],
     "scripts": {
         "prepare": "husky",
         "format": "yarn prettier -w eslint.config.js",
