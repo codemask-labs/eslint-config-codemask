@@ -24,6 +24,8 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    env:
+      HUSKY: 0
 
     steps:
       - name: Checkout
