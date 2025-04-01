@@ -36,7 +36,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - uses: codemask-labs/release-it@v1.1.2
+      - uses: codemask-labs/release-it@v1.2.0
         with:
           git-user: 'Codemask Labs'
           git-email: 'contact@codemask.com'
