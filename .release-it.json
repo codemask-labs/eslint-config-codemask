@@ -8,7 +8,6 @@
     },
     "git": {
         "requireCleanWorkingDir": true,
-        "requireBranch": "main",
         "tagName": "v${version}",
         "commitMessage": "chore(release): ${version}",
         "tagAnnotation": "v${version}"
