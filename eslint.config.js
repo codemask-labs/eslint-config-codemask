@@ -240,7 +240,10 @@ export default [
             '@typescript-eslint/no-unsafe-enum-comparison': 'off',
             '@typescript-eslint/no-unused-expressions': 'off',
             '@typescript-eslint/prefer-promise-reject-errors': 'off',
-            '@typescript-eslint/no-empty-object-type': 'off'
+            '@typescript-eslint/no-empty-object-type': 'off',
+            '@typescript-eslint/prefer-nullish-coalescing': 'error',
+            '@typescript-eslint/prefer-optional-chain': 'error',
+            '@typescript-eslint/prefer-reduce-type-parameter': 'error'
         }
     },
     {
