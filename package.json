@@ -23,5 +23,9 @@
         "eslint-plugin-react": ">=7.x",
         "eslint-plugin-react-hooks": "5.1.0-rc-f994737d14-20240522",
         "typescript-eslint": ">=7.x"
+    },
+    "devDependencies": {
+        "@release-it/conventional-changelog": "9.0.3",
+        "release-it": "17.10.0"
     }
 }
