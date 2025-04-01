@@ -242,7 +242,19 @@ export default [
             '@typescript-eslint/no-empty-object-type': 'off',
             '@typescript-eslint/prefer-nullish-coalescing': 'error',
             '@typescript-eslint/prefer-optional-chain': 'error',
-            '@typescript-eslint/prefer-reduce-type-parameter': 'error'
+            '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+            '@typescript-eslint/strict-boolean-expressions': [
+                'error',
+                {
+                    allowString: false,
+                    allowNumber: false,
+                    allowNullableBoolean: true,
+                    allowNullableEnum: true,
+                    allowNullableObject: true
+                }
+            ],
+            '@typescript-eslint/restrict-template-expressions': 'error',
+            '@typescript-eslint/no-unnecessary-condition': 'error'
         }
     },
     {
