@@ -201,7 +201,6 @@ export default [
                     accessibility: 'explicit'
                 }
             ],
-            '@stylistic/js/indent': 'off',
             '@typescript-eslint/interface-name-prefix': 'off',
             '@typescript-eslint/member-ordering': 'error',
             '@typescript-eslint/no-empty-function': 'off',
