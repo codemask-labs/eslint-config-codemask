@@ -175,14 +175,10 @@ export default [
                         },
                         Symbol: {
                             message: 'Avoid using the `Symbol` type. Did you mean `symbol`?'
-                        },
-                        unknown: {
-                            message: 'Please use proper type'
                         }
                     }
                 }
             ],
-            '@stylistic/comma-dangle': 'error',
             '@typescript-eslint/no-duplicate-enum-values': 'error',
             '@typescript-eslint/no-useless-empty-export': 'error',
             '@typescript-eslint/prefer-enum-initializers': 'error',
@@ -205,20 +201,6 @@ export default [
                     accessibility: 'explicit'
                 }
             ],
-            indent: [
-                'error',
-                4,
-                {
-                    ArrayExpression: 'first',
-                    FunctionDeclaration: {
-                        parameters: 'first'
-                    },
-                    FunctionExpression: {
-                        parameters: 'first'
-                    },
-                    SwitchCase: 1
-                }
-            ],
             '@typescript-eslint/interface-name-prefix': 'off',
             '@typescript-eslint/member-ordering': 'error',
             '@typescript-eslint/no-empty-function': 'off',
@@ -239,6 +221,9 @@ export default [
             '@typescript-eslint/prefer-namespace-keyword': 'error',
             '@typescript-eslint/restrict-plus-operands': 'error',
             '@stylistic/semi': ['error', 'never'],
+            '@stylistic/js/eol-last': ['error', 'always'],
+            '@stylistic/ts/comma-dangle': ['error', 'always-multiline'],
+            '@stylistic/ts/semi': ['error', 'never'],
             '@typescript-eslint/triple-slash-reference': [
                 'error',
                 {
@@ -248,27 +233,7 @@ export default [
                 }
             ],
             '@typescript-eslint/unified-signatures': 'error',
-            '@typescript-eslint/naming-convention': [
-                'error',
-                {
-                    selector: [
-                        'typeParameter',
-                        'classMethod',
-                        'classProperty',
-                        'function',
-                        'objectLiteralProperty',
-                        'parameter',
-                        'typeMethod',
-                        'typeParameter',
-                        'typeProperty'
-                    ],
-                    format: ['camelCase', 'snake_case', 'UPPER_CASE']
-                },
-                {
-                    selector: ['class', 'enum', 'enumMember', 'interface', 'typeAlias'],
-                    format: ['PascalCase']
-                }
-            ],
+            '@typescript-eslint/naming-convention': 'off',
             '@typescript-eslint/no-unnecessary-type-assertion': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
             '@typescript-eslint/no-misused-promises': 'off',
@@ -277,7 +242,22 @@ export default [
             '@typescript-eslint/no-unsafe-enum-comparison': 'off',
             '@typescript-eslint/no-unused-expressions': 'off',
             '@typescript-eslint/prefer-promise-reject-errors': 'off',
-            '@typescript-eslint/no-empty-object-type': 'off'
+            '@typescript-eslint/no-empty-object-type': 'off',
+            '@typescript-eslint/prefer-nullish-coalescing': 'error',
+            '@typescript-eslint/prefer-optional-chain': 'error',
+            '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+            '@typescript-eslint/strict-boolean-expressions': [
+                'error',
+                {
+                    allowString: false,
+                    allowNumber: false,
+                    allowNullableBoolean: true,
+                    allowNullableEnum: true,
+                    allowNullableObject: true
+                }
+            ],
+            '@typescript-eslint/restrict-template-expressions': 'error',
+            '@typescript-eslint/no-unnecessary-condition': 'error'
         }
     },
     {
