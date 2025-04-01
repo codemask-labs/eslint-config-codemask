@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0-beta.18](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2025-04-01)
+
+### CI/CD
+
+* update release action ([edc4a41](https://github.com/codemask-labs/eslint-config-codemask/commit/edc4a412f5e7a17f1ea37cfb7205c461e694f41e))
+
 ## [2.0.0-beta.17](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2025-04-01)
 
 ### Bug Fixes
