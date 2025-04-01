@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0-beta.17](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2025-04-01)
+
+### Bug Fixes
+
+* update deprecated rule ([a7825bf](https://github.com/codemask-labs/eslint-config-codemask/commit/a7825bf8ed7f7eca4b08ec349f0d94a2aa74ceb8))
+* update release-it ([ac5591f](https://github.com/codemask-labs/eslint-config-codemask/commit/ac5591f97f9d442d4bad89c3eca5b2c19bab0ef3))
+
+### Build items
+
+* **dependencies:** update dependencies ([cfb9090](https://github.com/codemask-labs/eslint-config-codemask/commit/cfb90904c5c4eb5759683f291865aa190f3e585f))
+
 ## 2.0.0-beta.16 (2025-04-01)
 
 ### Features
