@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0-beta.19](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2025-04-01)
+
+### Features
+
+* add comma-dangle ([6dfaa6e](https://github.com/codemask-labs/eslint-config-codemask/commit/6dfaa6e24b7dec2931ed48f464e9d50c2bc0c616))
+* add prefer nulish coalescing, optional chain and reduce type param ([f9a0ef9](https://github.com/codemask-labs/eslint-config-codemask/commit/f9a0ef9d320893e9fb8615341b1a9a47298a1122))
+* add strict boolean expressions, restrict template expressions and no unnecessary condition ([a747e2d](https://github.com/codemask-labs/eslint-config-codemask/commit/a747e2de86ebca19ed825278270aaa290f4b623a))
+
+### Bug Fixes
+
+* remove some rules ([eeafbe6](https://github.com/codemask-labs/eslint-config-codemask/commit/eeafbe66ddd51948816fae03a9ef30ec1d9ecfbe))
+
 ## [2.0.0-beta.18](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2025-04-01)
 
 ### CI/CD
