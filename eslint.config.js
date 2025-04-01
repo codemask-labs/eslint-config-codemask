@@ -402,7 +402,7 @@ export default [
         rules: {
             'functional/no-let': 'error',
             'functional/functional-parameters': [
-                'gtrt',
+                'warn',
                 {
                     enforceParameterCount: false
                 }
