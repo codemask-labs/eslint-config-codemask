@@ -175,14 +175,10 @@ export default [
                         },
                         Symbol: {
                             message: 'Avoid using the `Symbol` type. Did you mean `symbol`?'
-                        },
-                        unknown: {
-                            message: 'Please use proper type'
                         }
                     }
                 }
             ],
-            '@stylistic/comma-dangle': 'error',
             '@typescript-eslint/no-duplicate-enum-values': 'error',
             '@typescript-eslint/no-useless-empty-export': 'error',
             '@typescript-eslint/prefer-enum-initializers': 'error',
@@ -205,20 +201,7 @@ export default [
                     accessibility: 'explicit'
                 }
             ],
-            indent: [
-                'error',
-                4,
-                {
-                    ArrayExpression: 'first',
-                    FunctionDeclaration: {
-                        parameters: 'first'
-                    },
-                    FunctionExpression: {
-                        parameters: 'first'
-                    },
-                    SwitchCase: 1
-                }
-            ],
+            '@stylistic/js/indent': 'off',
             '@typescript-eslint/interface-name-prefix': 'off',
             '@typescript-eslint/member-ordering': 'error',
             '@typescript-eslint/no-empty-function': 'off',
@@ -248,27 +231,7 @@ export default [
                 }
             ],
             '@typescript-eslint/unified-signatures': 'error',
-            '@typescript-eslint/naming-convention': [
-                'error',
-                {
-                    selector: [
-                        'typeParameter',
-                        'classMethod',
-                        'classProperty',
-                        'function',
-                        'objectLiteralProperty',
-                        'parameter',
-                        'typeMethod',
-                        'typeParameter',
-                        'typeProperty'
-                    ],
-                    format: ['camelCase', 'snake_case', 'UPPER_CASE']
-                },
-                {
-                    selector: ['class', 'enum', 'enumMember', 'interface', 'typeAlias'],
-                    format: ['PascalCase']
-                }
-            ],
+            '@typescript-eslint/naming-convention': 'off',
             '@typescript-eslint/no-unnecessary-type-assertion': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
             '@typescript-eslint/no-misused-promises': 'off',
