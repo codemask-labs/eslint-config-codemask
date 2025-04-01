@@ -23,23 +23,23 @@ export default [
                 browser: true,
                 es6: true,
                 node: true,
-                jest: true
+                jest: true,
             },
             parser: tsParser,
             parserOptions: {
                 project: './tsconfig.json',
-                sourceType: 'module'
-            }
+                sourceType: 'module',
+            },
         },
         plugins: {
             'no-else': noElse,
             'jsx-a11y': a11y,
-            '@stylistic': stylistic
+            '@stylistic': stylistic,
         },
         settings: {
             react: {
-                version: 'detect'
-            }
+                version: 'detect',
+            },
         },
         rules: {
             'array-callback-return': 'error',
@@ -61,8 +61,8 @@ export default [
             'no-empty-function': [
                 'warn',
                 {
-                    allow: ['constructors']
-                }
+                    allow: ['constructors'],
+                },
             ],
             'no-extra-boolean-cast': 'warn',
             'no-extra-label': 'error',
@@ -133,24 +133,24 @@ export default [
                 {
                     max: 500,
                     skipBlankLines: true,
-                    skipComments: true
-                }
+                    skipComments: true,
+                },
             ],
-            'no-else-return': ['error', { allowElseIf: false }]
-        }
+            'no-else-return': ['error', { allowElseIf: false }],
+        },
     },
     {
         plugins: {
             '@typescript-eslint': tsEslint,
-            '@stylistic': stylistic
+            '@stylistic': stylistic,
         },
         rules: {
             '@typescript-eslint/adjacent-overload-signatures': 'error',
             '@typescript-eslint/array-type': [
                 'error',
                 {
-                    default: 'generic'
-                }
+                    default: 'generic',
+                },
             ],
             '@typescript-eslint/typedef': ['error'],
             '@typescript-eslint/await-thenable': 'error',
@@ -159,25 +159,25 @@ export default [
                 {
                     types: {
                         Object: {
-                            message: 'Avoid using the `Object` type. Did you mean `Record`?'
+                            message: 'Avoid using the `Object` type. Did you mean `Record`?',
                         },
                         Function: {
-                            message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.'
+                            message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
                         },
                         Boolean: {
-                            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?'
+                            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?',
                         },
                         Number: {
-                            message: 'Avoid using the `Number` type. Did you mean `number`?'
+                            message: 'Avoid using the `Number` type. Did you mean `number`?',
                         },
                         String: {
-                            message: 'Avoid using the `String` type. Did you mean `string`?'
+                            message: 'Avoid using the `String` type. Did you mean `string`?',
                         },
                         Symbol: {
-                            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?'
-                        }
-                    }
-                }
+                            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
+                        },
+                    },
+                },
             ],
             '@typescript-eslint/no-duplicate-enum-values': 'error',
             '@typescript-eslint/no-useless-empty-export': 'error',
@@ -188,9 +188,9 @@ export default [
                 {
                     multiline: {
                         delimiter: 'comma',
-                        requireLast: false
-                    }
-                }
+                        requireLast: false,
+                    },
+                },
             ],
             '@typescript-eslint/class-name-casing': 'off',
             '@typescript-eslint/consistent-type-assertions': 'off',
@@ -198,8 +198,8 @@ export default [
             '@typescript-eslint/explicit-member-accessibility': [
                 'off',
                 {
-                    accessibility: 'explicit'
-                }
+                    accessibility: 'explicit',
+                },
             ],
             '@typescript-eslint/interface-name-prefix': 'off',
             '@typescript-eslint/member-ordering': 'error',
@@ -228,8 +228,8 @@ export default [
                 {
                     path: 'always',
                     types: 'prefer-import',
-                    lib: 'always'
-                }
+                    lib: 'always',
+                },
             ],
             '@typescript-eslint/unified-signatures': 'error',
             '@typescript-eslint/naming-convention': 'off',
@@ -252,17 +252,17 @@ export default [
                     allowNumber: false,
                     allowNullableBoolean: true,
                     allowNullableEnum: true,
-                    allowNullableObject: true
-                }
+                    allowNullableObject: true,
+                },
             ],
             '@typescript-eslint/restrict-template-expressions': 'error',
-            '@typescript-eslint/no-unnecessary-condition': 'error'
-        }
+            '@typescript-eslint/no-unnecessary-condition': 'error',
+        },
     },
     {
         plugins: {
             react: fixupPluginRules(react),
-            'react-hooks': reactHooks
+            'react-hooks': reactHooks,
         },
         rules: {
             'jsx-quotes': ['error', 'prefer-double'],
@@ -277,8 +277,8 @@ export default [
                     arrow: 'parens-new-line',
                     condition: 'parens-new-line',
                     logical: 'parens-new-line',
-                    prop: 'parens-new-line'
-                }
+                    prop: 'parens-new-line',
+                },
             ],
             'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
             'react/hook-use-state': 'off',
@@ -289,12 +289,12 @@ export default [
             'react/jsx-boolean-value': 'error',
             'react/jsx-fragments': ['error', 'element'],
             'react/no-children-prop': 'error',
-            'react-hooks/exhaustive-deps': 'off'
-        }
+            'react-hooks/exhaustive-deps': 'off',
+        },
     },
     {
         plugins: {
-            import: imports
+            import: imports,
         },
         rules: {
             'import/no-extraneous-dependencies': 'off',
@@ -308,52 +308,52 @@ export default [
                         {
                             pattern: 'lib/**',
                             group: 'external',
-                            position: 'after'
+                            position: 'after',
                         },
                         {
                             pattern: 'features/**',
                             group: 'external',
-                            position: 'after'
+                            position: 'after',
                         },
                         {
                             pattern: 'modules/**',
                             group: 'external',
-                            position: 'after'
+                            position: 'after',
                         },
                         {
                             pattern: 'common/**',
                             group: 'external',
-                            position: 'after'
+                            position: 'after',
                         },
                         {
                             pattern: 'assets/**',
                             group: 'external',
-                            position: 'after'
+                            position: 'after',
                         },
                         {
                             pattern: 'react',
                             group: 'external',
-                            position: 'before'
+                            position: 'before',
                         },
                         {
                             pattern: 'react-native',
                             group: 'external',
-                            position: 'before'
+                            position: 'before',
                         },
                         {
                             pattern: '@nestjs/**',
                             group: 'external',
-                            position: 'before'
-                        }
+                            position: 'before',
+                        },
                     ],
-                    pathGroupsExcludedImportTypes: ['builtin']
-                }
-            ]
-        }
+                    pathGroupsExcludedImportTypes: ['builtin'],
+                },
+            ],
+        },
     },
     {
         plugins: {
-            'prefer-arrow': preferArrow
+            'prefer-arrow': preferArrow,
         },
         rules: {
             'prefer-arrow/prefer-arrow-functions': [
@@ -361,40 +361,40 @@ export default [
                 {
                     disallowPrototype: true,
                     singleReturnOnly: false,
-                    classPropertiesAllowed: false
-                }
-            ]
-        }
+                    classPropertiesAllowed: false,
+                },
+            ],
+        },
     },
     {
         plugins: {
-            'nested-if': nestedIf
+            'nested-if': nestedIf,
         },
         rules: {
-            'nested-if/nested-if-statements': 'error'
-        }
+            'nested-if/nested-if-statements': 'error',
+        },
     },
     {
         plugins: {
-            functional
+            functional,
         },
         rules: {
             'functional/no-let': 'error',
             'functional/functional-parameters': [
                 'warn',
                 {
-                    enforceParameterCount: false
-                }
+                    enforceParameterCount: false,
+                },
             ],
             'functional/immutable-data': [
                 'error',
                 {
                     ignoreImmediateMutation: true,
-                    ignoreAccessorPattern: '**.current'
-                }
+                    ignoreAccessorPattern: '**.current',
+                },
             ],
             'functional/no-loop-statements': 'error',
-            'functional/prefer-tacit': 'warn'
-        }
-    }
+            'functional/prefer-tacit': 'warn',
+        },
+    },
 ]

@@ -6,7 +6,7 @@
     "type": "module",
     "author": "Codemask Labs",
     "license": "MIT",
-    "dependencies": {
+    "peerDependencies": {
         "@eslint/compat": ">=1.x",
         "@eslint/js": ">=9.x",
         "@stylistic/eslint-plugin": ">=4.x",
