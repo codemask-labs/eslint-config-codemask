@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0-beta.22](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2025-04-01)
+
+### Bug Fixes
+
+* update package.json ([3e92732](https://github.com/codemask-labs/eslint-config-codemask/commit/3e92732778f3c9ccc13e0f8f5be347480f910066))
+
 ## [2.0.0-beta.21](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2025-04-01)
 
 ### Bug Fixes
