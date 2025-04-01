@@ -223,7 +223,6 @@ export default [
             '@stylistic/semi': ['error', 'never'],
             '@stylistic/eol-last': ['error', 'always'],
             '@stylistic/comma-dangle': ['error', 'always-multiline'],
-            '@stylistic/semi': ['error', 'never'],
             '@typescript-eslint/triple-slash-reference': [
                 'error',
                 {
