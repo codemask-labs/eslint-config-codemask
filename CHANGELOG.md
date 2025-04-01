@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.1](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0...v2.0.1) (2025-04-01)
+
+### Bug Fixes
+
+* remove unused package and disable no floating promises rule ([#20](https://github.com/codemask-labs/eslint-config-codemask/issues/20)) ([0612908](https://github.com/codemask-labs/eslint-config-codemask/commit/0612908db4742d1db45babaa454a0a871ad110d9))
+
+### CI/CD
+
+* disable husky in release action ([#21](https://github.com/codemask-labs/eslint-config-codemask/issues/21)) ([3efefe8](https://github.com/codemask-labs/eslint-config-codemask/commit/3efefe8ec33c1e243ac92a9770f8a9eb1b61cc55))
+* update release action ([1469394](https://github.com/codemask-labs/eslint-config-codemask/commit/1469394222a51063fd2d39d833c68e97899d4df0))
+* update release action ([38aa2e2](https://github.com/codemask-labs/eslint-config-codemask/commit/38aa2e2dd2ccb025477e92d64cbb1e3c22b54c7b))
+
 ## [2.0.0](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.22...v2.0.0) (2025-04-01)
 
 ## [2.0.0-beta.22](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2025-04-01)
