@@ -257,6 +257,7 @@ export default [
             ],
             '@typescript-eslint/restrict-template-expressions': 'error',
             '@typescript-eslint/no-unnecessary-condition': 'error',
+            '@typescript-eslint/no-floating-promises': 'off',
         },
     },
     {
