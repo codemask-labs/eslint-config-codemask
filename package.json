@@ -25,7 +25,10 @@
         "typescript-eslint": ">=7.x"
     },
     "devDependencies": {
-        "@release-it/conventional-changelog": "9.0.3",
-        "release-it": "17.10.0"
+        "@release-it/conventional-changelog": "10.0.0",
+        "release-it": "18.1.2"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
