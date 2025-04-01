@@ -24,10 +24,6 @@
         "eslint-plugin-react-hooks": "5.1.0-rc-f994737d14-20240522",
         "typescript-eslint": ">=7.x"
     },
-    "devDependencies": {
-        "@release-it/conventional-changelog": "10.0.0",
-        "release-it": "18.1.2"
-    },
     "publishConfig": {
         "access": "public"
     }
