@@ -8,12 +8,10 @@ import nestedIf from 'eslint-plugin-nested-if'
 import functional from 'eslint-plugin-functional'
 import noElse from 'eslint-plugin-no-else'
 import reactHooks from 'eslint-plugin-react-hooks'
-import imports from 'eslint-plugin-import'
 import a11y from 'eslint-plugin-jsx-a11y'
-import stylistic from '@stylistic/eslint-plugin'
 import { fixupPluginRules } from '@eslint/compat'
 
-export default [
+export const codemaskConfig = [
     js.configs.recommended,
     ...tsEslintBase.config(...tsEslintBase.configs.recommendedTypeChecked),
     {
@@ -34,7 +32,6 @@ export default [
         plugins: {
             'no-else': noElse,
             'jsx-a11y': a11y,
-            '@stylistic': stylistic,
         },
         settings: {
             react: {
@@ -88,9 +85,7 @@ export default [
             'no-underscore-dangle': 'warn',
             'no-unused-expressions': 'off',
             camelcase: 'warn',
-            'arrow-body-style': ['error', 'as-needed'],
             'constructor-super': 'error',
-            curly: 'error',
             'default-case': 'error',
             'dot-notation': 'error',
             'guard-for-in': 'error',
@@ -127,7 +122,6 @@ export default [
             radix: 'error',
             'use-isnan': 'error',
             'valid-typeof': 'error',
-            '@stylistic/comma-dangle': 'off',
             'max-lines': [
                 'error',
                 {
@@ -142,7 +136,6 @@ export default [
     {
         plugins: {
             '@typescript-eslint': tsEslint,
-            '@stylistic': stylistic,
         },
         rules: {
             '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -183,15 +176,6 @@ export default [
             '@typescript-eslint/no-useless-empty-export': 'error',
             '@typescript-eslint/prefer-enum-initializers': 'error',
             '@typescript-eslint/no-unused-vars': 'error',
-            '@typescript-eslint/member-delimiter-style': [
-                'off',
-                {
-                    multiline: {
-                        delimiter: 'comma',
-                        requireLast: false,
-                    },
-                },
-            ],
             '@typescript-eslint/class-name-casing': 'off',
             '@typescript-eslint/consistent-type-assertions': 'off',
             '@typescript-eslint/consistent-type-definitions': 'off',
@@ -220,9 +204,6 @@ export default [
             '@typescript-eslint/prefer-function-type': 'error',
             '@typescript-eslint/prefer-namespace-keyword': 'error',
             '@typescript-eslint/restrict-plus-operands': 'error',
-            '@stylistic/semi': ['error', 'never'],
-            '@stylistic/eol-last': ['error', 'always'],
-            '@stylistic/comma-dangle': ['error', 'always-multiline'],
             '@typescript-eslint/triple-slash-reference': [
                 'error',
                 {
@@ -266,90 +247,15 @@ export default [
             'react-hooks': reactHooks,
         },
         rules: {
-            'jsx-quotes': ['error', 'prefer-double'],
             'react-hooks/rules-of-hooks': 'error',
             'react/boolean-prop-naming': ['error', { rule: '^((is|has|are|with)[A-Z]([A-Za-z0-9]?)|disabled)+' }],
-            'react/jsx-wrap-multilines': [
-                'error',
-                {
-                    declaration: 'parens-new-line',
-                    assignment: 'parens-new-line',
-                    return: 'parens-new-line',
-                    arrow: 'parens-new-line',
-                    condition: 'parens-new-line',
-                    logical: 'parens-new-line',
-                    prop: 'parens-new-line',
-                },
-            ],
-            'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
             'react/hook-use-state': 'off',
             'react/self-closing-comp': 'error',
             'react/jsx-key': 'error',
-            'react/jsx-equals-spacing': [2, 'never'],
-            'react/jsx-curly-spacing': 'error',
             'react/jsx-boolean-value': 'error',
             'react/jsx-fragments': ['error', 'element'],
             'react/no-children-prop': 'error',
             'react-hooks/exhaustive-deps': 'off',
-        },
-    },
-    {
-        plugins: {
-            import: imports,
-        },
-        rules: {
-            'import/no-extraneous-dependencies': 'off',
-            'import/no-internal-modules': 'off',
-            'import/order': [
-                'error',
-                {
-                    groups: [['builtin', 'external'], 'internal', ['sibling', 'parent'], 'index'],
-                    warnOnUnassignedImports: true,
-                    pathGroups: [
-                        {
-                            pattern: 'lib/**',
-                            group: 'external',
-                            position: 'after',
-                        },
-                        {
-                            pattern: 'features/**',
-                            group: 'external',
-                            position: 'after',
-                        },
-                        {
-                            pattern: 'modules/**',
-                            group: 'external',
-                            position: 'after',
-                        },
-                        {
-                            pattern: 'common/**',
-                            group: 'external',
-                            position: 'after',
-                        },
-                        {
-                            pattern: 'assets/**',
-                            group: 'external',
-                            position: 'after',
-                        },
-                        {
-                            pattern: 'react',
-                            group: 'external',
-                            position: 'before',
-                        },
-                        {
-                            pattern: 'react-native',
-                            group: 'external',
-                            position: 'before',
-                        },
-                        {
-                            pattern: '@nestjs/**',
-                            group: 'external',
-                            position: 'before',
-                        },
-                    ],
-                    pathGroupsExcludedImportTypes: ['builtin'],
-                },
-            ],
         },
     },
     {
