@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.1](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.0...v2.1.1) (2025-04-03)
+
+### Bug Fixes
+
+* include missing files ([#25](https://github.com/codemask-labs/eslint-config-codemask/issues/25)) ([fb5f5b0](https://github.com/codemask-labs/eslint-config-codemask/commit/fb5f5b0e35d8a8805189ca6dac1bdfc7949bd51e))
+
 ## [2.1.0](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.0.1...v2.1.0) (2025-04-03)
 
 ### Features
