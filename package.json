@@ -11,7 +11,9 @@
     },
     "files": [
         "index.js",
-        "eslint.config.js"
+        "eslint.config.js",
+        "import.config.js",
+        "stylistic.config.js"
     ],
     "scripts": {
         "prepare": "husky",
