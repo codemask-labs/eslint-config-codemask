@@ -246,6 +246,7 @@ export const codemaskConfig = [
             react: fixupPluginRules(react),
             'react-hooks': reactHooks,
         },
+        files: ['**/*.tsx', '**/*.jsx'],
         rules: {
             'react-hooks/rules-of-hooks': 'error',
             'react/boolean-prop-naming': ['error', { rule: '^((is|has|are|with)[A-Z]([A-Za-z0-9]?)|disabled)+' }],
