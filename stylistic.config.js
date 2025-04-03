@@ -1,4 +1,5 @@
 import react from 'eslint-plugin-react'
+import stylistic from '@stylistic/eslint-plugin'
 import { fixupPluginRules } from '@eslint/compat'
 
 export const codemaskStylisticConfig = [
