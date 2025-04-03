@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.2](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.1...v2.1.2) (2025-04-03)
+
+### Bug Fixes
+
+* fix stylistic config ([#26](https://github.com/codemask-labs/eslint-config-codemask/issues/26)) ([235ec91](https://github.com/codemask-labs/eslint-config-codemask/commit/235ec91e3703480aae7a996fec0c87006e19d884))
+
 ## [2.1.1](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.0...v2.1.1) (2025-04-03)
 
 ### Bug Fixes
