@@ -8,13 +8,12 @@ import noElse from 'eslint-plugin-no-else'
 import reactHooks from 'eslint-plugin-react-hooks'
 import a11y from 'eslint-plugin-jsx-a11y'
 import { fixupPluginRules } from '@eslint/compat'
-import * as tseslint from 'typescript-eslint'
 import * as eslint from 'typescript-eslint'
 
-export const codemaskConfig = tseslint.config(
+export const codemaskConfig = eslint.config(
     js.configs.recommended,
     {
-        ignores: ['.eslintrc.js ', 'node_modules', '@typescript-eslint/parser'],
+        ignores: ['.eslintrc.js', 'node_modules', '@typescript-eslint/parser'],
         languageOptions: {
             globals: {
                 browser: true,
@@ -133,7 +132,7 @@ export const codemaskConfig = tseslint.config(
         },
     },
     {
-        extends: [eslint.configs.recommended, tseslint.configs.recommended],
+        extends: [eslint.configs.recommended, eslint.configs.recommendedTypeChecked],
         rules: {
             '@typescript-eslint/adjacent-overload-signatures': 'error',
             '@typescript-eslint/array-type': [
@@ -221,7 +220,6 @@ export const codemaskConfig = tseslint.config(
             '@typescript-eslint/prefer-promise-reject-errors': 'off',
             '@typescript-eslint/no-empty-object-type': 'off',
             '@typescript-eslint/prefer-nullish-coalescing': 'error',
-            '@typescript-eslint/no-unnecessary-type-constraint': 'off',
             '@typescript-eslint/prefer-optional-chain': 'error',
             '@typescript-eslint/prefer-reduce-type-parameter': 'error',
             '@typescript-eslint/strict-boolean-expressions': [
