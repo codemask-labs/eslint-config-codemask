@@ -12,6 +12,3 @@ trim_trailing_whitespace = true
 [*.{sh,podspec,yml,yaml}]
 indent_style = space
 indent_size = 2
-
-[.*rc]
-indent_size = 2

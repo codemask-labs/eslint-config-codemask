@@ -8,16 +8,12 @@ import nestedIf from 'eslint-plugin-nested-if'
 import functional from 'eslint-plugin-functional'
 import noElse from 'eslint-plugin-no-else'
 import reactHooks from 'eslint-plugin-react-hooks'
-import imports from 'eslint-plugin-import'
 import a11y from 'eslint-plugin-jsx-a11y'
-import stylistic from '@stylistic/eslint-plugin'
 import { fixupPluginRules } from '@eslint/compat'
 
-export default [
+export const codemaskConfig = [
     js.configs.recommended,
-    ...tsEslintBase.config(
-        ...tsEslintBase.configs.recommendedTypeChecked
-    ),
+    ...tsEslintBase.config(...tsEslintBase.configs.recommendedTypeChecked),
     {
         ignores: ['.eslintrc.js ', 'node_modules', '@typescript-eslint/parser'],
         languageOptions: {
@@ -25,23 +21,22 @@ export default [
                 browser: true,
                 es6: true,
                 node: true,
-                jest: true
+                jest: true,
             },
             parser: tsParser,
             parserOptions: {
                 project: './tsconfig.json',
-                sourceType: 'module'
+                sourceType: 'module',
             },
         },
         plugins: {
             'no-else': noElse,
             'jsx-a11y': a11y,
-            '@stylistic': stylistic
         },
         settings: {
             react: {
-                version: 'detect'
-            }
+                version: 'detect',
+            },
         },
         rules: {
             'array-callback-return': 'error',
@@ -60,9 +55,12 @@ export default [
             'no-alert': 'warn',
             'no-continue': 'error',
             'no-delete-var': 'error',
-            'no-empty-function': ['warn', {
-                allow: ['constructors']
-            }],
+            'no-empty-function': [
+                'warn',
+                {
+                    allow: ['constructors'],
+                },
+            ],
             'no-extra-boolean-cast': 'warn',
             'no-extra-label': 'error',
             'no-implicit-coercion': 'error',
@@ -71,10 +69,7 @@ export default [
             'no-multi-assign': 'error',
             'no-param-reassign': 'error',
             'no-return-assign': 'error',
-            'no-restricted-globals': [
-                'error',
-                'while', 'do', 'for', 'else', 'continue', 'with', 'let', 'var'
-            ],
+            'no-restricted-globals': ['error', 'while', 'do', 'for', 'else', 'continue', 'with', 'let', 'var'],
             'no-unneeded-ternary': 'warn',
             'no-useless-catch': 'warn',
             'no-useless-concat': 'warn',
@@ -84,15 +79,13 @@ export default [
             'no-with': 'error',
             'prefer-rest-params': 'warn',
             'require-await': 'warn',
-            'yoda': 'error',
-            'eqeqeq': 'error',
+            yoda: 'error',
+            eqeqeq: 'error',
             'prefer-template': 'error',
             'no-underscore-dangle': 'warn',
             'no-unused-expressions': 'off',
-            'camelcase': 'warn',
-            'arrow-body-style': ['error', 'as-needed'],
+            camelcase: 'warn',
             'constructor-super': 'error',
-            'curly': 'error',
             'default-case': 'error',
             'dot-notation': 'error',
             'guard-for-in': 'error',
@@ -126,94 +119,71 @@ export default [
             'object-shorthand': 'error',
             'prefer-const': 'error',
             'prefer-object-spread': 'error',
-            'radix': 'error',
+            radix: 'error',
             'use-isnan': 'error',
             'valid-typeof': 'error',
-            '@stylistic/comma-dangle': 'off',
-            'max-lines': ['error', {
-                'max': 500,
-                'skipBlankLines': true,
-                'skipComments': true
-            }],
-            'no-else-return': ['error', { allowElseIf: false }]
-        }
+            'max-lines': [
+                'error',
+                {
+                    max: 500,
+                    skipBlankLines: true,
+                    skipComments: true,
+                },
+            ],
+            'no-else-return': ['error', { allowElseIf: false }],
+        },
     },
     {
         plugins: {
             '@typescript-eslint': tsEslint,
-            '@stylistic': stylistic
         },
         rules: {
             '@typescript-eslint/adjacent-overload-signatures': 'error',
             '@typescript-eslint/array-type': [
                 'error',
                 {
-                    'default': 'generic'
-                }
+                    default: 'generic',
+                },
             ],
             '@typescript-eslint/typedef': ['error'],
             '@typescript-eslint/await-thenable': 'error',
             '@typescript-eslint/no-restricted-types': [
                 'error',
                 {
-                    'types': {
-                        'Object': {
-                            'message': 'Avoid using the `Object` type. Did you mean `Record`?'
+                    types: {
+                        Object: {
+                            message: 'Avoid using the `Object` type. Did you mean `Record`?',
                         },
-                        'Function': {
-                            'message': 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.'
+                        Function: {
+                            message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
                         },
-                        'Boolean': {
-                            'message': 'Avoid using the `Boolean` type. Did you mean `boolean`?'
+                        Boolean: {
+                            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?',
                         },
-                        'Number': {
-                            'message': 'Avoid using the `Number` type. Did you mean `number`?'
+                        Number: {
+                            message: 'Avoid using the `Number` type. Did you mean `number`?',
                         },
-                        'String': {
-                            'message': 'Avoid using the `String` type. Did you mean `string`?'
+                        String: {
+                            message: 'Avoid using the `String` type. Did you mean `string`?',
                         },
-                        'Symbol': {
-                            'message': 'Avoid using the `Symbol` type. Did you mean `symbol`?'
+                        Symbol: {
+                            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
                         },
-                        'unknown': {
-                            'message': 'Please use proper type'
-                        }
-                    }
-                }
+                    },
+                },
             ],
-            '@stylistic/comma-dangle': 'error',
             '@typescript-eslint/no-duplicate-enum-values': 'error',
             '@typescript-eslint/no-useless-empty-export': 'error',
             '@typescript-eslint/prefer-enum-initializers': 'error',
             '@typescript-eslint/no-unused-vars': 'error',
-            '@typescript-eslint/member-delimiter-style': [
-                'off',
-                {
-                    'multiline': {
-                        'delimiter': 'comma',
-                        'requireLast': false
-                    }
-                }
-            ],
             '@typescript-eslint/class-name-casing': 'off',
             '@typescript-eslint/consistent-type-assertions': 'off',
             '@typescript-eslint/consistent-type-definitions': 'off',
-            '@typescript-eslint/explicit-member-accessibility': ['off', {
-                'accessibility': 'explicit'
-            }],
-            '@typescript-eslint/indent': [
-                'error',
-                4,
+            '@typescript-eslint/explicit-member-accessibility': [
+                'off',
                 {
-                    'ArrayExpression': 'first',
-                    'FunctionDeclaration': {
-                        'parameters': 'first'
-                    },
-                    'FunctionExpression': {
-                        'parameters': 'first'
-                    },
-                    'SwitchCase': 1
-                }
+                    accessibility: 'explicit',
+                },
             ],
             '@typescript-eslint/interface-name-prefix': 'off',
             '@typescript-eslint/member-ordering': 'error',
@@ -234,33 +204,16 @@ export default [
             '@typescript-eslint/prefer-function-type': 'error',
             '@typescript-eslint/prefer-namespace-keyword': 'error',
             '@typescript-eslint/restrict-plus-operands': 'error',
-            '@stylistic/semi': ['error', 'never'],
-            '@typescript-eslint/triple-slash-reference': ['error', {
-                'path': 'always',
-                'types': 'prefer-import',
-                'lib': 'always'
-            }],
-            '@typescript-eslint/unified-signatures': 'error',
-            '@typescript-eslint/naming-convention': ['error',
+            '@typescript-eslint/triple-slash-reference': [
+                'error',
                 {
-                    selector: [
-                        'typeParameter',
-                        'classMethod',
-                        'classProperty',
-                        'function',
-                        'objectLiteralProperty',
-                        'parameter',
-                        'typeMethod',
-                        'typeParameter',
-                        'typeProperty'
-                    ],
-                    format: ['camelCase', 'snake_case', 'UPPER_CASE']
+                    path: 'always',
+                    types: 'prefer-import',
+                    lib: 'always',
                 },
-                {
-                    selector: ['class', 'enum', 'enumMember', 'interface', 'typeAlias'],
-                    format: ['PascalCase']
-                }
             ],
+            '@typescript-eslint/unified-signatures': 'error',
+            '@typescript-eslint/naming-convention': 'off',
             '@typescript-eslint/no-unnecessary-type-assertion': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
             '@typescript-eslint/no-misused-promises': 'off',
@@ -269,106 +222,57 @@ export default [
             '@typescript-eslint/no-unsafe-enum-comparison': 'off',
             '@typescript-eslint/no-unused-expressions': 'off',
             '@typescript-eslint/prefer-promise-reject-errors': 'off',
-            '@typescript-eslint/no-empty-object-type': 'off'
-        }
+            '@typescript-eslint/no-empty-object-type': 'off',
+            '@typescript-eslint/prefer-nullish-coalescing': 'error',
+            '@typescript-eslint/prefer-optional-chain': 'error',
+            '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+            '@typescript-eslint/strict-boolean-expressions': [
+                'error',
+                {
+                    allowString: false,
+                    allowNumber: false,
+                    allowNullableBoolean: true,
+                    allowNullableEnum: true,
+                    allowNullableObject: true,
+                },
+            ],
+            '@typescript-eslint/restrict-template-expressions': 'error',
+            '@typescript-eslint/no-unnecessary-condition': 'error',
+            '@typescript-eslint/no-floating-promises': 'off',
+        },
     },
     {
         plugins: {
             react: fixupPluginRules(react),
             'react-hooks': reactHooks,
         },
+        files: ['**/*.tsx', '**/*.jsx'],
         rules: {
-            'jsx-quotes': ['error', 'prefer-double'],
             'react-hooks/rules-of-hooks': 'error',
-            'react/boolean-prop-naming': ['error', { 'rule': '^((is|has|are|with)[A-Z]([A-Za-z0-9]?)|disabled)+' }],
-            'react/jsx-wrap-multilines': ['error', {
-                'declaration': 'parens-new-line',
-                'assignment': 'parens-new-line',
-                'return': 'parens-new-line',
-                'arrow': 'parens-new-line',
-                'condition': 'parens-new-line',
-                'logical': 'parens-new-line',
-                'prop': 'parens-new-line'
-            }],
-            'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+            'react/boolean-prop-naming': ['error', { rule: '^((is|has|are|with)[A-Z]([A-Za-z0-9]?)|disabled)+' }],
             'react/hook-use-state': 'off',
             'react/self-closing-comp': 'error',
             'react/jsx-key': 'error',
-            'react/jsx-equals-spacing': [2, 'never'],
-            'react/jsx-curly-spacing': 'error',
             'react/jsx-boolean-value': 'error',
             'react/jsx-fragments': ['error', 'element'],
             'react/no-children-prop': 'error',
-            'react-hooks/exhaustive-deps': 'off'
-        }
-    },
-    {
-        plugins: {
-            'import': imports,
+            'react-hooks/exhaustive-deps': 'off',
         },
-        rules: {
-            'import/no-extraneous-dependencies': 'off',
-            'import/no-internal-modules': 'off',
-            'import/order': ['error', {
-                groups: [['builtin', 'external'], 'internal', ['sibling', 'parent'], 'index'],
-                warnOnUnassignedImports: true,
-                pathGroups: [
-                    {
-                        pattern: 'lib/**',
-                        group: 'external',
-                        position: 'after'
-                    },
-                    {
-                        pattern: 'features/**',
-                        group: 'external',
-                        position: 'after'
-                    },
-                    {
-                        pattern: 'modules/**',
-                        group: 'external',
-                        position: 'after'
-                    },
-                    {
-                        pattern: 'common/**',
-                        group: 'external',
-                        position: 'after'
-                    },
-                    {
-                        pattern: 'assets/**',
-                        group: 'external',
-                        position: 'after'
-                    },
-                    {
-                        pattern: 'react',
-                        group: 'external',
-                        position: 'before'
-                    },
-                    {
-                        pattern: 'react-native',
-                        group: 'external',
-                        position: 'before'
-                    },
-                    {
-                        pattern: '@nestjs/**',
-                        group: 'external',
-                        position: 'before'
-                    }
-                ],
-                pathGroupsExcludedImportTypes: ['builtin']
-            }],
-        }
     },
     {
         plugins: {
             'prefer-arrow': preferArrow,
         },
         rules: {
-            'prefer-arrow/prefer-arrow-functions': ['warn', {
-                'disallowPrototype': true,
-                'singleReturnOnly': false,
-                'classPropertiesAllowed': false
-            }],
-        }
+            'prefer-arrow/prefer-arrow-functions': [
+                'warn',
+                {
+                    disallowPrototype: true,
+                    singleReturnOnly: false,
+                    classPropertiesAllowed: false,
+                },
+            ],
+        },
     },
     {
         plugins: {
@@ -376,23 +280,29 @@ export default [
         },
         rules: {
             'nested-if/nested-if-statements': 'error',
-        }
+        },
     },
     {
         plugins: {
-            functional
+            functional,
         },
         rules: {
             'functional/no-let': 'error',
-            'functional/functional-parameters': ['warn', {
-                enforceParameterCount: false
-            }],
-            'functional/immutable-data': ['error', {
-                ignoreImmediateMutation: true,
-                ignoreAccessorPattern: '**.current'
-            }],
+            'functional/functional-parameters': [
+                'warn',
+                {
+                    enforceParameterCount: false,
+                },
+            ],
+            'functional/immutable-data': [
+                'error',
+                {
+                    ignoreImmediateMutation: true,
+                    ignoreAccessorPattern: '**.current',
+                },
+            ],
             'functional/no-loop-statements': 'error',
             'functional/prefer-tacit': 'warn',
-        }
-    }
+        },
+    },
 ]

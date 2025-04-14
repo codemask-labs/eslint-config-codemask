@@ -1,0 +1,50 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      release-branch:
+        type: choice
+        description: To which branch you want to release
+        default: main
+        options:
+          - main
+          - beta
+          - rc
+      dry-run:
+        type: boolean
+        description: 'Dry run'
+        required: true
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Init NPM configuration
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies
+        run: yarn
+
+      - uses: codemask-labs/release-it@v1.2.1
+        with:
+          git-user: 'Codemask Labs'
+          git-email: 'contact@codemask.com'
+          git-token: ${{ secrets.GITHUB_TOKEN }}
+          release-branch: ${{ inputs.release-branch }}
+          dry-run: ${{ inputs.dry-run }}
