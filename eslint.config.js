@@ -1,7 +1,5 @@
 import js from '@eslint/js'
-import tsEslintBase from 'typescript-eslint'
 import tsParser from '@typescript-eslint/parser'
-import tsEslint from '@typescript-eslint/eslint-plugin'
 import preferArrow from 'eslint-plugin-prefer-arrow'
 import react from 'eslint-plugin-react'
 import nestedIf from 'eslint-plugin-nested-if'
@@ -10,12 +8,12 @@ import noElse from 'eslint-plugin-no-else'
 import reactHooks from 'eslint-plugin-react-hooks'
 import a11y from 'eslint-plugin-jsx-a11y'
 import { fixupPluginRules } from '@eslint/compat'
+import * as eslint from 'typescript-eslint'
 
-export const codemaskConfig = [
+export const codemaskConfig = eslint.config(
     js.configs.recommended,
-    ...tsEslintBase.config(...tsEslintBase.configs.recommendedTypeChecked),
     {
-        ignores: ['.eslintrc.js ', 'node_modules', '@typescript-eslint/parser'],
+        ignores: ['.eslintrc.js', 'node_modules', '@typescript-eslint/parser'],
         languageOptions: {
             globals: {
                 browser: true,
@@ -134,9 +132,7 @@ export const codemaskConfig = [
         },
     },
     {
-        plugins: {
-            '@typescript-eslint': tsEslint,
-        },
+        extends: [eslint.configs.recommended, eslint.configs.recommendedTypeChecked],
         rules: {
             '@typescript-eslint/adjacent-overload-signatures': 'error',
             '@typescript-eslint/array-type': [
@@ -305,4 +301,4 @@ export const codemaskConfig = [
             'functional/prefer-tacit': 'warn',
         },
     },
-]
+)
