@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.3](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.2...v2.1.3) (2025-04-14)
+
+### Bug Fixes
+
+* redefine issue ([97e9da6](https://github.com/codemask-labs/eslint-config-codemask/commit/97e9da61cf76ec8ad6e27bc3d33141f27ba1b6e4))
+
 ## [2.1.2](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.1...v2.1.2) (2025-04-03)
 
 ### Bug Fixes
