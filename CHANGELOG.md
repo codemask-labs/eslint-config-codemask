@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.4-beta.0](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.3...v2.1.4-beta.0) (2025-04-14)
+
+### Bug Fixes
+
+* added fix for comma dangle for <T,> types ([0c2ca73](https://github.com/codemask-labs/eslint-config-codemask/commit/0c2ca73ac71307d58eaa75131a17beb2713186d1))
+
 ## [2.1.3](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.2...v2.1.3) (2025-04-14)
 
 ### Bug Fixes
