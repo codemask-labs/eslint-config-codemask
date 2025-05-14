@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-codemask",
-    "version": "2.1.4-beta.0",
+    "version": "2.2.0",
     "description": "Codemask ESLint configuration",
     "main": "index.js",
     "type": "module",

@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.0](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.4-beta.0...v2.2.0) (2025-05-14)
+
+### Features
+
+* added .ts files to comma dangle fix ([d31cc42](https://github.com/codemask-labs/eslint-config-codemask/commit/d31cc4221c6f074ea44550959517c0e34bbfe37c))
+
 ## [2.1.4-beta.0](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.3...v2.1.4-beta.0) (2025-04-14)
 
 ### Bug Fixes
