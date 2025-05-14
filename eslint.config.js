@@ -13,7 +13,7 @@ import * as eslint from 'typescript-eslint'
 export const codemaskConfig = eslint.config(
     js.configs.recommended,
     {
-        files: ['**/*.tsx'],
+        files: ['**/*.tsx', '**/*.ts'],
         languageOptions: {
             parserOptions: {
                 ecmaFeatures: {
