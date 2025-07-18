@@ -34,6 +34,7 @@ export const codemaskConfig = eslint.config(
             parser: tsParser,
             parserOptions: {
                 project: './tsconfig.json',
+                tsconfigRootDir: process.cwd(),
                 sourceType: 'module',
             },
         },
