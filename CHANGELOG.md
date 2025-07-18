@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.1](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.2.0...v2.2.1) (2025-07-18)
+
+### Bug Fixes
+
+* tsconfig root dir ([0c90858](https://github.com/codemask-labs/eslint-config-codemask/commit/0c908583df556e94b87682849d6d65eda53fe0af))
+
 ## [2.2.0](https://github.com/codemask-labs/eslint-config-codemask/compare/v2.1.4-beta.0...v2.2.0) (2025-05-14)
 
 ### Features
